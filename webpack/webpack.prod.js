@@ -2,7 +2,6 @@ const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
-const paths = require('./paths');
 const HookPlugin = require('./hook-plugin');
 const commonOptions = require('./webpack.common');
 
@@ -10,10 +9,6 @@ module.exports = merge(commonOptions, {
 	mode: 'production',
 
 	devtool: false,
-
-	entry: {
-		vendor: `${paths.src.vendors}/vendor.js`,
-	},
 
 	module: {
 		rules: [

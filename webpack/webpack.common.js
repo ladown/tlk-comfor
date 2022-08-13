@@ -50,8 +50,6 @@ module.exports = {
 				filename: path.join(paths.build.default, file.replace('.pug', '.html')),
 				inject: 'body',
 				alwaysWriteToDisk: true,
-				chunks: ['vendor', 'main'],
-				chunksSortMode: 'manual',
 			});
 		}),
 

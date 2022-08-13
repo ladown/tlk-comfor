@@ -148,9 +148,11 @@
 
 	&__changing-button {
 		&.changing-button {
-			margin-top: -8rem;
-			margin-left: auto;
-			width: auto;
+			@include from(1px) {
+				margin-top: -8rem;
+				margin-left: auto;
+				width: auto;
+			}
 		}
 	}
 
