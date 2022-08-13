@@ -1,0 +1,47 @@
+-
+	var mapData = {
+		title: 'ТЛК «Комфорт» - одна из ведущих транспортных компаний России',
+
+		text: 'Отправляем грузы бережно, помогаем увеличить прибыль бизнеса и открываем для своих клиентов новые возможности каждый день.',
+
+		features: [
+			{
+				header: '6 200',
+				subheader: 'автомобилей <br/>в управлении',
+			},
+			{
+				header: '5 560',
+				subheader: 'тонн ежедневных <br/>перевозок',
+			},
+			{
+				header: '10',
+				subheader: 'лет на рынке <br/>грузоперевозок',
+			},
+		],
+		button: {
+			icon: {
+				name: 'arrowRight',
+				viewBox: '0 0 12 12',
+			},
+		},
+	};
+	var i = 0;
+
++b.SECTION.map
+	+e.wrap.wrap
+		+e.description
+			+e.H2.title.h2.js-reveal-fadeIn #{ mapData.title }
+			+e.text.js-reveal-fadeIn #{ mapData.text }
+			+e.features.flex._start
+				each item in mapData.features
+					+e.feature.js-reveal-slideUp
+						+e.feature-header.h3 #{ item.header }
+						+e.feature-subheader !{ item.subheader }
+			+button(mapData.button).js-reveal-fadeIn
+				| Подробнее
+		+e.map.js-map-reveal
+			+map
+			+e.labels
+				while i <= 8
+					+e.label
+					- i += 1;

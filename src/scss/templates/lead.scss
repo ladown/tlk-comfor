@@ -1,0 +1,110 @@
+.lead {
+	position: relative;
+	padding: 110rem 0;
+	margin-top: 150rem;
+	background-color: $dark;
+	z-index: 1;
+	overflow: hidden;
+
+	@include to(980px) {
+		padding: 75rem 0;
+		margin-top: 90rem;
+	}
+
+	@include to(580px) {
+		padding: 60rem 0 275rem;
+		margin-top: 35rem;
+	}
+
+	&__title {
+		color: #fff;
+		font-weight: 600;
+	}
+
+	&__subtitle {
+		margin-top: 32rem;
+		width: 100%;
+		max-width: 490rem;
+		color: #fff;
+		font-size: 18rem;
+		line-height: 1.45;
+
+		@include to(980px) {
+			margin-top: 24rem;
+		}
+
+		@include to(580px) {
+			margin-top: 16rem;
+			font-size: 16rem;
+			max-width: calc(div(297, 383) * 100%);
+		}
+	}
+
+	&__button {
+		margin-top: 32rem;
+
+		@include to(580px) {
+			margin-top: 27rem;
+			padding: 17rem 32rem 18rem;
+		}
+	}
+
+	&__background {
+		position: absolute;
+		z-index: -1;
+
+		&_desktop {
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		&_mobile {
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 580rem;
+			max-width: unset;
+			height: auto;
+		}
+
+		&-photo {
+			&_1 {
+				width: 437rem;
+				height: 396rem;
+				align-self: center;
+
+				@include to(1550px) {
+					width: 375rem;
+					height: 339.82rem;
+				}
+
+				@include to(980px) {
+					width: 25%;
+					height: auto;
+				}
+
+				@include to(768px) {
+					align-self: flex-end;
+				}
+			}
+
+			&_2 {
+				width: 658rem;
+				height: 574rem;
+				align-self: flex-end;
+
+				@include to(1550px) {
+					width: 550rem;
+					height: 480rem;
+				}
+
+				@include to(980px) {
+					width: 35%;
+					height: auto;
+				}
+			}
+		}
+	}
+}

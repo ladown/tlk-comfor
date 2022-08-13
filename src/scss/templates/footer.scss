@@ -1,0 +1,343 @@
+.footer {
+	flex: 0 0 auto;
+	padding: 80rem 0 50rem;
+	background-color: #f8f9f9;
+
+	@include to(980px) {
+		padding: 55rem 0 40rem;
+	}
+
+	@include to(580px) {
+		padding: 30rem 0;
+	}
+
+	&__row {
+		position: relative;
+
+		&:not(:last-child) {
+			padding-bottom: 80rem;
+			margin-bottom: 40rem;
+			border-bottom: 1px solid rgba(20, 45, 59, 0.1);
+
+			@include to(980px) {
+				padding-bottom: 50rem;
+				margin-bottom: 34rem;
+			}
+
+			@include to(580px) {
+				padding-bottom: 14rem;
+			}
+		}
+
+		&_top {
+			@include to(980px) {
+				justify-content: space-between;
+			}
+
+			@include to(580px) {
+				flex-wrap: wrap;
+			}
+		}
+
+		&_bottom {
+			font-size: 15rem;
+			line-height: 1.4;
+			color: rgba(20, 45, 59, 0.4);
+
+			@include to(580px) {
+				font-size: 14rem;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-start;
+			}
+
+			> *:not(:last-child) {
+				margin-bottom: 8rem;
+			}
+
+			p {
+				@include from(581px) {
+					margin-right: 22%;
+				}
+			}
+
+			a {
+				transition: color 0.3s linear;
+
+				@include from(581px) {
+					&:last-child {
+						margin-left: auto;
+					}
+				}
+
+				&:hover {
+					color: $orange;
+				}
+			}
+		}
+	}
+
+	&__cell {
+		flex-shrink: 1;
+		flex-basis: auto;
+
+		@include to(580px) {
+			flex-basis: 100%;
+		}
+
+		&_info {
+			width: 320rem;
+			margin-right: 145rem;
+			align-content: flex-start;
+
+			@include to(980px) {
+				width: 280rem;
+				margin-right: 70rem;
+			}
+
+			@include to(580px) {
+				margin-right: 0px;
+				align-items: center;
+			}
+		}
+
+		&_nav {
+			margin-top: 67rem;
+			width: 620rem;
+
+			@include to(980px) {
+				width: 550rem;
+				margin-top: 60rem;
+			}
+
+			@include to(580px) {
+				margin-top: 34rem;
+			}
+		}
+	}
+
+	&__logo {
+		font-weight: 700;
+		font-size: 23rem;
+		line-height: div(27, 23);
+		transition: color 0.3s linear;
+
+		@include from(581px) {
+			flex-basis: 100%;
+		}
+
+		@include to(980px) {
+			font-size: 20rem;
+			line-height: div(23, 20);
+		}
+
+		@include to(580px) {
+			margin-right: auto;
+			flex-basis: auto;
+		}
+
+		&:hover {
+			color: $orange;
+		}
+	}
+
+	&__phone {
+		margin-top: 40rem;
+		font-weight: 500;
+		font-size: 20rem;
+		line-height: 1.1;
+		transition: color 0.3s linear;
+
+		@include from(581px) {
+			flex-basis: 100%;
+		}
+
+		@include to(980px) {
+			margin-top: 30rem;
+		}
+
+		@include to(580px) {
+			flex-basis: auto;
+			margin-top: 0;
+			margin-left: 30rem;
+		}
+
+		&:hover {
+			color: $orange;
+		}
+	}
+
+	&__text {
+		flex-basis: 100%;
+		margin-top: 26rem;
+		font-size: 14rem;
+		line-height: 1.4;
+		color: rgba(20, 45, 59, 0.4);
+
+		@include to(580px) {
+			margin-top: 24rem;
+		}
+	}
+
+	&__email {
+		margin-top: 40rem;
+		font-weight: 500;
+		font-size: 16rem;
+		line-height: div(19, 16);
+		color: #ff6f3c;
+		transition: color 0.3s linear;
+
+		@include from(581px) {
+			flex-basis: 100%;
+		}
+
+		@include to(980px) {
+			margin-top: 30rem;
+		}
+
+		@include to(580px) {
+			flex-basis: auto;
+			margin-top: 16rem;
+			margin-right: 30rem;
+		}
+
+		&:hover {
+			color: $orangeHover;
+		}
+	}
+
+	&__socials {
+		margin-top: 32rem;
+
+		@include from(581px) {
+			flex-basis: 100%;
+			margin-top: 26rem;
+		}
+
+		@include to(580px) {
+			flex-basis: auto;
+			margin-top: 16rem;
+		}
+	}
+
+	&__social {
+		fill: rgba(20, 45, 59, 0.4);
+		transition: fill 0.3s linear;
+
+		.icon {
+			width: 20rem;
+
+			&-vk {
+				width: 22.5rem;
+			}
+		}
+
+		&:hover {
+			fill: $orange;
+		}
+
+		&:not(:last-child) {
+			margin-right: 16rem;
+		}
+	}
+
+	&__nav {
+		@include to(580px) {
+			flex-wrap: wrap;
+		}
+
+		&-cell {
+			flex: 0 1 auto;
+
+			@include to(580px) {
+				flex-basis: 100%;
+			}
+
+			&:not(:last-child) {
+				@include from(581px) {
+					margin-right: 30rem;
+				}
+
+				@include to(580px) {
+					margin-bottom: 24rem;
+				}
+			}
+		}
+
+		&-label {
+			font-weight: 500;
+			font-size: 20rem;
+			line-height: 1.1;
+			transition: color 0.3s linear;
+
+			@include to(580px) {
+				font-size: 18rem;
+			}
+
+			&:hover {
+				color: $orange;
+			}
+		}
+
+		&-items {
+			margin-top: 24rem;
+
+			@include to(580px) {
+				margin-top: 12rem;
+			}
+		}
+
+		&-link {
+			font-size: 18rem;
+			line-height: 1.45;
+			color: #4d627b;
+			transition: color 0.3s linear;
+
+			@include to(580px) {
+				font-size: 14rem;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 8rem;
+			}
+
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
+
+	&__scroll-top {
+		position: absolute;
+		right: 0;
+		background-color: rgba(20, 45, 59, 0.08);
+		width: 40rem;
+		height: 40rem;
+		border-radius: 100%;
+		fill: transparent;
+		stroke: $dark;
+		stroke-width: 1.5;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		transition: stroke 0.3s linear, background-color 0.3s linear;
+
+		@include from(981px) {
+			top: 67rem;
+		}
+
+		@include to(980px) {
+			bottom: 20rem;
+		}
+
+		&:hover {
+			background-color: $orange;
+			stroke: #fff;
+		}
+
+		svg {
+			width: 24rem;
+			height: 24rem;
+			transform: rotate(180deg);
+		}
+	}
+}

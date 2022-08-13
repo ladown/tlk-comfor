@@ -1,0 +1,74 @@
+-
+	var heroData = {
+		label: 'ТЛК «Комфорт» — ваш проверенный партнер',
+
+		title: 'Доставка грузов любых габаритов и веса в любую точку России',
+
+		fields: [
+			{
+				label: 'Откуда',
+				placeholder: 'Комсомольск-на-Амуре',
+				inputName: 'destination_from',
+				options: [
+					'Москва',
+					'Санкт-Петербург',
+					'Новосибирск',
+					'Екатеринбург',
+					'Нижний Новгород',
+					'Ростов-на-Дону',
+					'Волгоград',
+					'Комсомольск-на-Амуре',
+					'Москва',
+					'Новосибирск',
+				],
+			},
+			{
+				label: 'Куда',
+				placeholder: 'Комсомольск-на-Амуре',
+				inputName: 'destination_to',
+				options: [
+					'Москва',
+					'Санкт-Петербург',
+					'Новосибирск',
+					'Екатеринбург',
+					'Нижний Новгород',
+					'Ростов-на-Дону',
+					'Волгоград',
+					'Комсомольск-на-Амуре',
+					'Москва',
+					'Новосибирск',
+				],
+			},
+		],
+
+		background: {
+			mobile: `${imgPath}background/hero-bg-mobile.jpg`,
+			default: `${imgPath}background/hero-bg.jpg`,
+		},
+
+		text: 'Наша главная цель — долгосрочное, взаимовыгодное сотрудничество с каждым клиентом.',
+	};
+
++b.SECTION.hero
+	+e.wrap.wrap
+		+e.label.flex._vertical.js-reveal-fadeIn
+			+e.label-icon
+				+icon('union', '0 0 15 16')
+			+e.label-text #{ heroData.label }
+		+e.H1.title.h1.js-reveal-slideUp #{ heroData.title }
+		+e.box.flex._vertical.js-reveal-fadeIn
+			+select(heroData.fields[0])
+			+e.box-icon
+				+icon('directionToggle', '0 0 24 36').small-tablet-hidden
+				+icon('directionToggleMobile', '0 0 36 24').min-small-tablet-hidden
+			+select(heroData.fields[1])
+			+button
+				| Рассчитать стоимость
+		+e.text.js-reveal-fadeIn #{ heroData.text }
+	+e.PICTURE.background 
+		source(
+			srcset=heroData.background.mobile
+			media='(max-width: 580px)')
+		+e.IMG.background-photo.object-fit(
+			src=heroData.background.default
+			alt='promo-background')

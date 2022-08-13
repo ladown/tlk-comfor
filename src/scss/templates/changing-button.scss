@@ -1,0 +1,30 @@
+.changing-button {
+	position: relative;
+	font-size: 17rem;
+	line-height: 1.4;
+	color: rgba(20, 45, 59, 0.4);
+	transition: color 0.3s linear;
+
+	@include to(580px) {
+		font-size: 14rem;
+	}
+
+	&:hover {
+		color: $orange;
+
+		&::before {
+			background-color: $orange;
+		}
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 1px;
+		background-color: #cfdbe3;
+		transition: background-color 0.3s linear;
+	}
+}

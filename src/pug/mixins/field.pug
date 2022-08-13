@@ -1,0 +1,13 @@
+mixin field(data = {})
+	+e.LABEL.field.field__(class=data.mode)&attributes(attributes)
+		if data.isTextarea
+			+e.TEXTAREA.item(
+				name=data.name
+				placeholder=data.placeholder)
+		else
+			+e.INPUT.item(
+				type=data.type
+				inputmode=data.inputmode
+				name=data.name
+				placeholder=data.placeholder)
+		+e.label #{ data.label }

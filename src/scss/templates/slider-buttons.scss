@@ -1,0 +1,40 @@
+.slider-buttons {
+	@include to(580px) {
+		display: none;
+	}
+
+	&__button {
+		width: 60rem;
+		height: 60rem;
+		border-radius: 100%;
+		background-color: $dark;
+		fill: #fff;
+		transition: background-color 0.3s linear, fill 0.3s linear;
+
+		&.swiper-button-disabled[disabled] {
+			cursor: not-allowed;
+			background-color: #f8f8f9;
+			fill: rgba(20, 45, 59, 0.4);
+		}
+
+		&:not(.swiper-button-disabled[disabled]) {
+			&:hover {
+				background-color: $orange;
+			}
+		}
+
+		.icon {
+			width: 32rem;
+			height: 32rem;
+		}
+
+		&_next {
+			margin-left: 10rem;
+			.icon {
+				transform: rotate(180deg);
+			}
+		}
+
+		@extend %flex-center;
+	}
+}

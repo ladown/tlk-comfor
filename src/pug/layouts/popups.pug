@@ -1,0 +1,120 @@
+-
+	var callbackPopupData = {
+		mode: '_callback',
+		jsClass: 'js-popup-callback',
+
+		title: 'Заказать звонок',
+
+		subtitle: 'Обращаем ваше внимание, мы работаем с юридическими лицами. В ближайшее время наши менеджеры свяжутся c вами.',
+
+		fields: [
+			{
+				mode: '_name',
+				label: 'Ваше имя',
+				type: 'text',
+				name: 'name',
+				placeholder: 'Представьтесь',
+			},
+			{
+				mode: '_tel',
+				label: 'Телефон',
+				type: 'tel',
+				inputmode: 'tel',
+				name: 'tel',
+				placeholder: 'Укажите номер телефона',
+			},
+			{
+				mode: '_email',
+				label: 'E-mail',
+				type: 'email',
+				inputmode: 'email',
+				name: 'email',
+				placeholder: 'Укажите email',
+			},
+			{
+				mode: '_textarea',
+				label: 'Сообщение',
+				name: 'message',
+				placeholder: 'Введите сообщение',
+				isTextarea: true,
+			},
+		],
+
+
+		isChangingTelephone: true,
+	};
+
+	var servicePopupData = {
+		mode: '_service',
+		jsClass: 'js-popup-service',
+
+		title: 'Заказать звонок',
+
+		subtitle: 'Обращаем ваше внимание, мы работаем с юридическими лицами. В ближайшее время наши менеджеры свяжутся c вами.',
+
+		fields: [
+			{
+				mode: '_name',
+				label: 'Ваше имя',
+				type: 'text',
+				name: 'name',
+				placeholder: 'Представьтесь',
+			},
+			{
+				isSelect: true,
+				label: 'Необходимая услуга',
+				placeholder: 'Выберите услугу',
+				inputName: 'service',
+				options: [
+					'Крановые работы',
+					'Курьерские услуги',
+					'Маркировка',
+					'Такелажные работы',
+					'Упаковка груза',
+					'Возврат  оригиналов документов ',
+					'Погрузо-разгрузочные работы',
+					'Консолидация груза',
+					'Внутритарный учет',
+					'Крепление груза',
+					'Сортировка',
+					'Доставка до склада грузоотправителя',
+				],
+			},
+			{
+				mode: '_tel',
+				label: 'Телефон',
+				type: 'tel',
+				inputmode: 'tel',
+				name: 'tel',
+				placeholder: 'Укажите номер телефона',
+			},
+			{
+				mode: '_email',
+				label: 'E-mail',
+				type: 'email',
+				inputmode: 'email',
+				name: 'email',
+				placeholder: 'Укажите email',
+			},
+			{
+				mode: '_organization-name',
+				label: 'Наименование организации',
+				type: 'text',
+				name: 'organization_name',
+				placeholder: 'ООО Название организации',
+			},
+			{
+				mode: '_textarea',
+				label: 'Детали',
+				name: 'details',
+				placeholder: 'Дополнительные характеристики груза, комментариик перевозке, особенности маршрута',
+				isTextarea: true,
+			},
+		],
+	};
+
+
+//- .popups
+.popups
+	+popup(callbackPopupData)
+	+popup(servicePopupData)

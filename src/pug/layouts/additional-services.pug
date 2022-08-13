@@ -1,0 +1,29 @@
+-
+	var additionServicesData = {
+		title: 'Дополнительные услуги компании',
+
+		subtitle: 'Кроме собственно доставки вашего груза, мы также готовы предложить дополнительные услуги',
+
+		items: [
+			'Крановые работы',
+			'Погрузо-разгрузочные работы',
+			'Такелажные работы',
+			'Упаковка',
+			'Курьерские услуги',
+			'Погрузо-разгрузочные работы',
+			'Упаковка',
+			'Консолидация груза',
+			'Маркировка',
+			'Возврат  документов',
+			'Получение/доставка от/до склада грузоотправителя',
+		],
+	};
+
++b.SECTION.additional-services
+	+e.wrap.wrap.flex._justify._start
+		+e.cell._description
+			+e.H2.title.h2.js-reveal-slideUp #{ additionServicesData.title }
+			+e.subtitle.js-reveal-slideUp #{ additionServicesData.subtitle }
+		+e.cell._items.flex._vertical._row._wrap
+			each item in additionServicesData.items
+				+e.item.js-reveal-fadeIn #{ item }

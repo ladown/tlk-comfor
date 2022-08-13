@@ -1,0 +1,30 @@
+-
+	var errorData = {
+		title: 'Страница не найдена',
+
+		button: {
+			href: '/',
+			icon: {
+				name: 'arrowRight',
+				viewBox: '0 0 12 12',
+			},
+		},
+
+		background: {
+			mobile: `${imgPath}background/error-bg-mobile.jpg`,
+			default: `${imgPath}background/error-bg.jpg`,
+		},
+	};
+
++b.SECTION.error
+	+e.wrap.wrap
+		+e.H1.title.h1 #{ errorData.title }
+		+button(errorData.button)
+			| На главную
+	+e.PICTURE.background 
+		source(
+			srcset=errorData.background.mobile
+			media='(max-width: 580px)')
+		img.object-fit(
+			src=errorData.background.default
+			alt='error-page-background')

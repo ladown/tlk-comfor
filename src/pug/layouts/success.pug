@@ -1,0 +1,37 @@
+-
+	var successData = {
+		title: 'Благодарим за заявку!',
+
+		subtitle: 'Обращаем ваше внимание, мы работаем с юридическими лицами. В ближайшее время наши менеджеры свяжутся c вами.',
+
+		button: {
+			href: '/',
+			icon: {
+				name: 'arrowRight',
+				viewBox: '0 0 12 12',
+			},
+		},
+
+		backgroundDesktop: [
+			`${imgPath}background/success-bg-1.svg`,
+			`${imgPath}background/success-bg-2.svg`,
+		],
+
+		backgroundMobile: `${imgPath}background/success-bg-mobile.svg`,
+	};
+
++b.SECTION.success
+	+e.wrap.wrap.text-center
+		+e.H1.title.h2 #{ successData.title }
+		+e.subtitle #{ successData.subtitle }
+		+button(successData.button) 
+			| На главную
+		+e.background._desktop.mobile-hidden
+			each item, index in successData.backgroundDesktop
+				+e.IMG.background-photo(
+					class=`_${index + 1}`
+					src=item
+					alt='success-background')
+		+e.IMG.background._mobile.from-mobile-hidden(
+			src=successData.backgroundMobile
+			alt='success-background')

@@ -1,0 +1,235 @@
+.types {
+	background-color: #f8f9f9;
+	padding: 80rem 0;
+
+	@include to(980px) {
+		padding: 54rem 0;
+	}
+
+	@include to(580px) {
+		overflow: hidden;
+		padding: 28rem 0 35rem;
+	}
+
+	&__header {
+		@include from(581px) {
+			border-bottom: 1px solid #cfdbe3;
+		}
+
+		@include to(768px) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__title {
+		color: $dark;
+		flex: 0 0 350rem;
+		margin-right: 50rem;
+
+		@include to(980px) {
+			flex: 0 0 275rem;
+			margin-right: 25rem;
+		}
+
+		@include to(768px) {
+			flex-basis: 100%;
+			margin-right: 0;
+			margin-bottom: 20rem;
+		}
+
+		@include to(580px) {
+			margin-bottom: 10rem;
+		}
+	}
+
+	&__tabs {
+		@include to(580px) {
+			margin-bottom: -30px;
+			padding: 0 var(--wrapper-offset) 30px;
+			overflow: scroll hidden;
+		}
+
+		&-outer {
+			flex: 1;
+
+			@include to(580px) {
+				flex: 0 0 auto;
+				width: calc(100% + (2 * var(--wrapper-offset)));
+				overflow: hidden;
+				margin: 0 calc(-1 * var(--wrapper-offset));
+			}
+		}
+	}
+
+	&__tab {
+		position: relative;
+		padding-bottom: 24rem;
+		font-weight: 500;
+		font-size: 20rem;
+		line-height: 1.2;
+		color: rgba(20, 45, 59, 0.4);
+		transition: color 0.3s linear;
+
+		@include to(580px) {
+			font-size: 18rem;
+			padding-bottom: 16rem;
+		}
+
+		&:hover {
+			color: $orange;
+		}
+
+		&:not(:last-child) {
+			margin-right: 40rem;
+
+			@include to(980px) {
+				margin-right: 32rem;
+			}
+
+			@include to(580px) {
+				margin-right: 24rem;
+			}
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: -1px;
+			width: 100%;
+			height: 3px;
+			background-color: $orange;
+			opacity: 0;
+			transition: opacity 0.3s linear;
+		}
+
+		&.is-active {
+			color: $dark;
+
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__content {
+		margin-top: 56rem;
+
+		@include to(980px) {
+			margin-top: 48rem;
+		}
+
+		@include to(580px) {
+			margin-top: 40rem;
+		}
+	}
+
+	&__items {
+		width: 100%;
+		max-width: calc(100% - 400rem);
+		margin-left: auto;
+
+		@include to(980px) {
+			max-width: calc(100% - 300rem);
+		}
+
+		@include to(768px) {
+			max-width: 100%;
+		}
+	}
+
+	&__item {
+		@include from(581px) {
+			min-height: 290rem;
+		}
+
+		@include to(580px) {
+			flex-flow: row-reverse wrap;
+		}
+
+		&-cell {
+			&_description {
+				overflow: hidden;
+				flex: 0 1 490rem;
+
+				@include from(581px) {
+					margin-right: 40rem;
+				}
+
+				@include to(580px) {
+					order: 2;
+					flex-basis: 100%;
+					margin-top: 33rem;
+				}
+			}
+
+			&_photo {
+				align-self: flex-start;
+				flex: 0 1 auto;
+				width: 100%;
+				max-width: 320rem;
+
+				@include to(580px) {
+					order: 1;
+					max-width: calc(100% - 150rem);
+					margin: 0 auto;
+				}
+
+				.is-out & {
+					visibility: hidden;
+					animation: FadeOutSlideDown 0.3s linear forwards;
+				}
+
+				.is-in & {
+					visibility: hidden;
+					animation: FadeInSlideUp 0.3s linear forwards;
+				}
+
+				img {
+					display: block;
+					margin: auto;
+				}
+			}
+		}
+
+		&-text {
+			font-size: 17rem;
+			line-height: 145%;
+			color: rgba(20, 45, 59, 0.7);
+
+			@include to(580px) {
+				font-size: 16rem;
+				width: calc(div(358, 384) * 100%);
+			}
+
+			.is-out.is-left-animation & {
+				visibility: hidden;
+				animation: FadeOutSlideRight 0.3s linear forwards;
+			}
+
+			.is-out.is-right-animation & {
+				visibility: hidden;
+				animation: FadeOutSlideLeft 0.3s linear forwards;
+			}
+
+			.is-in.is-left-animation & {
+				visibility: hidden;
+				animation: FadeInSlideLeft 0.3s linear forwards;
+			}
+
+			.is-in.is-right-animation & {
+				visibility: hidden;
+				animation: FadeInSlideRight 0.3s linear forwards;
+			}
+		}
+	}
+
+	&__button {
+		margin-top: 23rem;
+
+		@include to(580px) {
+			padding-left: 32rem;
+			padding-right: 32rem;
+		}
+	}
+}

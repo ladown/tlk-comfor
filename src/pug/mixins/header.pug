@@ -1,0 +1,265 @@
+-
+	var headerData = {
+		logo: `${imgPath}common/logo.svg`,
+
+		links: [
+			{
+				href: '/about.html',
+				text: 'О компании',
+			},
+			{
+				href: '/services.html',
+				text: 'Услуги',
+				subblock: {
+					tabs: [
+						'По транспорту',
+						'Все услуги',
+					],
+
+					items: [
+						[
+							{
+								href: '#',
+								label: 'Автомобильные',
+								links: [
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+								],
+							},
+							{
+								href: '#',
+								label: 'Железнодорожные',
+								links: [
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+								],
+							},
+							{
+								href: '#',
+								label: 'Морские',
+								links: [
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+								],
+							},
+							{
+								href: '#',
+								label: 'Авиа',
+								links: [
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+									{
+										href: '#',
+										text: 'Название услуги',
+									},
+								],
+							},
+						],
+						[
+							{
+								labels: [
+									{
+										href: '#',
+										label: 'Крановые работы',
+									},
+									{
+										href: '#',
+										label: 'Курьерские услуги',
+									},
+									{
+										href: '#',
+										label: 'Маркировка',
+									},
+									{
+										href: '#',
+										label: 'Крановые работы',
+									},
+									{
+										href: '#',
+										label: 'Курьерские услуги',
+									},
+								]
+							},
+							{
+								labels: [
+									{
+										href: '#',
+										label: 'Такелажные работы',
+									},
+									{
+										href: '#',
+										label: 'Упаковка груза',
+									},
+									{
+										href: '#',
+										label: 'Возврат  оригиналов документов ',
+									},
+									{
+										href: '#',
+										label: 'Такелажные работы',
+									},
+									{
+										href: '#',
+										label: 'Упаковка груза',
+									},
+								]
+							},
+							{
+								labels: [
+									{
+										href: '#',
+										label: 'Погрузо-разгрузочные работы',
+									},
+									{
+										href: '#',
+										label: 'Консолидация груза',
+									},
+									{
+										href: '#',
+										label: 'Внутритарный учет',
+									},
+									{
+										href: '#',
+										label: 'Погрузо-разгрузочные работы',
+									},
+									{
+										href: '#',
+										label: 'Консолидация груза',
+									},
+								]
+							},
+							{
+								labels: [
+									{
+										href: '#',
+										label: 'Крепление груза',
+									},
+									{
+										href: '#',
+										label: 'Сортировка',
+									},
+									{
+										href: '#',
+										label: 'Доставка до склада грузоотправителя',
+									},
+									{
+										href: '#',
+										label: 'Крепление груза',
+									},
+									{
+										href: '#',
+										label: 'Сортировка',
+									},
+								],
+							},
+						],
+					],
+				},
+			},
+			{
+				href: '/news.html',
+				text: 'Новости',
+			},
+			{
+				href: '/contacts.html',
+				text: 'Контакты',
+			},
+		],
+	};
+
+mixin header(data = {})
+	+b.HEADER.header.js-header
+		+e.wrap.wrap
+			+e.row._top.flex._vertical
+				+e.A.logo.flex(href='/')
+					+e.IMG.logo-img(
+						src=headerData.logo
+						alt='tlk-comfort-logo')
+					+e.logo-text ТЛК КОМФОРТ
+				+e.A.phone(href='tel:+74953766110') +7 495 376 61 10
+				+e.BUTTON.callback.js-popup-callback-trigger Заказать звонок
+				+search
+				+e.BUTTON.menu-button.js-header-button
+					span
+			+e.row._menu.flex.js-header-menu.js-tabs
+				+search
+				each link in headerData.links
+					+e.block
+						+e.A.link.flex._vertical(href=link.href class=link.subblock && 'js-header-subblock-trigger')
+							+e.link-text #{ link.text }
+							if link.subblock
+								+e.link-icon
+									+icon('arrowDown', '0 0 16 16')
+						if link.subblock
+							+e.subblock.js-header-subblock
+								- var item = headerData.links[1].subblock;
+								.wrap
+									+e.tabs.flex.js-tabs-parent
+										each tab, index in item.tabs
+											+e.BUTTON.tab.js-tabs-button(class=index === 0 && 'is-active') #{ tab }
+									+e.content
+										each cell, index in item.items
+											+e.tab-item.js-tabs-content(class=index === 0 && 'is-active')
+												each content in cell
+													+e.item
+														if content.labels
+															each label in content.labels 
+																+e.A.item-label.flex(href=label.href) #{ label.label }
+														else
+															+e.A.item-label.flex(href=content.href) #{ content.label }
+															if content.links
+																+e.item-links.flex._column
+																	each link in content.links
+																		+e.A.item-link(href=link.href) #{ link.text }

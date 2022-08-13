@@ -1,0 +1,16 @@
+mixin select(data = {})
+	+e.select.select__(class=`${data.mods ? `_${data.mods.join('')}` : ''} js-select`)&attributes(attributes)
+		+e.INPUT.input.js-select-input(
+			type='hidden'
+			name=data.inputName
+			value='')
+		+e.head.flex._nowrap._vertical._justify.js-select-head
+			+e.head-label #{ data.label }
+			+e.head-value.js-select-value #{ data.placeholder }
+			+e.head-arrow
+				+icon('arrowDown', '0 0 40 40')
+		if data.options
+			+e.options-outer.js-select-options
+				+e.options.css-scrollbar.flex._column._nowrap
+					each option in data.options
+						+e.option.js-select-option #{ option }

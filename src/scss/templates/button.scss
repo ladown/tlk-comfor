@@ -1,0 +1,65 @@
+.button {
+	padding: 22rem 32rem 23rem;
+	background-color: $orange;
+	border-radius: 8px;
+	font-weight: 600;
+	font-size: 16rem;
+	line-height: calc(div(19, 16));
+	color: #ffffff;
+	transition: background 0.3s linear, color 0.3s linear;
+
+	@extend %flex-center;
+
+	&[href] {
+		display: inline-flex;
+	}
+
+	@include from-to(581px, 980px) {
+		font-size: 18rem;
+	}
+
+	@include to(580px) {
+		padding: 17rem;
+	}
+
+	&:hover {
+		background-color: $orangeHover;
+	}
+
+	&_gray {
+		color: $dark;
+		background-color: rgba($dark, 0.1);
+
+		&:hover {
+			color: #fff;
+			background-color: rgba($dark, 1);
+		}
+	}
+
+	&__icon {
+		width: 20rem;
+		height: 20rem;
+		border-radius: 100%;
+		background-color: #fff;
+		margin-right: 56rem;
+
+		@extend %flex-center;
+
+		.icon-arrowRight {
+			width: 12rem;
+			height: 12rem;
+			fill: transparent;
+			stroke: $orange;
+			stroke-width: 1.5;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			transition: stroke 0.3s linear;
+		}
+
+		.button:hover & {
+			svg {
+				stroke: $orangeHover;
+			}
+		}
+	}
+}

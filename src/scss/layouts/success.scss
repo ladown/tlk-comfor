@@ -1,0 +1,104 @@
+.success {
+	padding: 350rem 0;
+	position: relative;
+	background-color: $dark;
+	z-index: 1;
+
+	@include to(980px) {
+		padding: 275rem 0 200rem;
+	}
+
+	@include to(580px) {
+		padding: 140rem 0 260rem;
+	}
+
+	&__title {
+		color: #fff;
+	}
+
+	&__subtitle {
+		width: 100%;
+		max-width: 546rem;
+		margin: 24rem auto 0;
+		font-size: 17rem;
+		line-height: 1.4;
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	&__button {
+		margin-top: 60rem;
+	}
+
+	&__background {
+		position: absolute;
+		z-index: -1;
+
+		@include from(581px) {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		@include to(580px) {
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 580rem;
+			max-width: unset;
+			height: auto;
+		}
+
+		&-photo {
+			position: absolute;
+
+			&_1 {
+				width: 482rem;
+				height: 423rem;
+				top: 328rem;
+				left: 0;
+
+				@include to(1550px) {
+					width: 375rem;
+					height: 329.1rem;
+				}
+
+				@include to(980px) {
+					top: auto;
+					bottom: 0;
+					width: 350rem;
+					height: 307.16rem;
+				}
+
+				@include to(768px) {
+					width: 25%;
+					height: auto;
+				}
+			}
+
+			&_2 {
+				right: 77rem;
+				bottom: 55rem;
+				width: 576rem;
+				height: 422rem;
+
+				@include to(1550px) {
+					width: 500rem;
+					height: 366.32rem;
+				}
+
+				@include to(980px) {
+					right: 0;
+					bottom: 0;
+					width: 450rem;
+					height: 329.69rem;
+				}
+
+				@include to(768px) {
+					width: 35%;
+					height: auto;
+				}
+			}
+		}
+	}
+}

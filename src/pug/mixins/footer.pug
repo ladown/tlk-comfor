@@ -1,0 +1,133 @@
+-
+	var footerData = {
+		phone: {
+			href: 'tel:+74953708080',
+			text: '+7 495 370 80 80'
+		},
+
+		text: 'Транспортная компания ТЛК «Комфорт» 143420, Московская обл., Орехово-Зуевский р-он, п/о Первомайский, 2-й км Горьковского ш., стр. 8, 5 этаж, офисы 418, 506, 618',
+
+		email: {
+			href: 'mailto:info@tlkcomfort.ru',
+			text: 'info@tlkcomfort.ru',
+		},
+
+		social: [
+			{
+				href: '#',
+				iconName: 'vk',
+				iconViewBox: '0 0 22.5 20',
+			},
+			{
+				href: '#',
+				iconName: 'phone',
+				iconViewBox: '0 0 20 20',
+			},
+			{
+				href: '#',
+				iconName: 'whatsapp',
+				iconViewBox: '0 0 20 20',
+			},
+		],
+
+		nav: [
+			{
+				label: {
+					href: '#',
+					text: 'Услуги',
+				},
+
+				links: [
+					{
+						href: '#',
+						text: 'Автоперевозки грузов',
+					},
+					{
+						href: '#',
+						text: 'Доставка сборных грузов',
+					},
+					{
+						href: '#',
+						text: 'Авиаперевозка грузов',
+					},
+					{
+						href: '#',
+						text: 'Контейнерные грузоперевозки',
+					},
+					{
+						href: '#',
+						text: 'Железнодорожные перевозки',
+					},
+					{
+						href: '#',
+						text: 'Проектные перевозки',
+					},
+					{
+						href: '#',
+						text: 'Таможенное оформление',
+					},
+					{
+						href: '#',
+						text: 'Складские услуги',
+					},
+				],
+			},
+			{
+				label: {
+					href: '#',
+					text: 'ТЛК «Комфорт»',
+				},
+
+				links: [
+					{
+						href: '#',
+						text: 'О компании',
+					},
+					{
+						href: '#',
+						text: 'Тарифы',
+					},
+					{
+						href: '#',
+						text: 'Наши кейсы',
+					},
+					{
+						href: '#',
+						text: 'Новости',
+					},
+					{
+						href: '#',
+						text: 'Контакты',
+					},
+				],
+			},
+		],
+	};
+
+mixin footer(data = {})
+	+b.FOOTER.footer
+		+e.wrap.wrap
+			+e.row._top.flex
+				+e.cell._info.flex._row._wrap
+					+e.A.logo(href='/') ТЛК КОМФОРТ
+					+e.A.phone(href=footerData.phone.href) #{ footerData.phone.text }
+					+e.text #{ footerData.text }
+					+e.A.email(href=footerData.email.href) #{ footerData.email.text }
+					+e.socials.flex._vertical
+						each item in footerData.social
+							+e.A.social.flex(href=item.href)
+								+icon(item.iconName, item.iconViewBox)
+				+e.cell._nav
+					+e.NAV.nav.flex._row._start._justify
+						each item in footerData.nav
+							+e.nav-cell
+								+e.A.nav-label(href=item.label.href) #{ item.label.text }
+								+e.nav-items.flex._column._start
+									each link in item.links
+										+e.A.nav-link(href=link.href) #{ link.text }
+					+e.BUTTON.scroll-top.js-scroll-top
+						+icon('arrowDown', '0 0 24 24')
+			+e.row._bottom.flex._vertical
+				p © 2022 ТЛК «Комфорт»
+				a(href='#') Конфиденциальность
+				a(href='https://vse.digital') Разработка ВСЁ

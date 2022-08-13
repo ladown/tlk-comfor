@@ -1,0 +1,38 @@
+-
+	var popupData = {
+		button: {
+			icon: {
+				name: 'arrowRight',
+				viewBox: '0 0 12 12',
+			},
+		},
+	};
+
+mixin popup(data = {})
+	+b.popup(class=`${data.mode} ${data.jsClass}`)
+		+e.overlay.js-popup-overlay
+		+e.wrap
+			+e.BUTTON.close.js-popup-close
+				+icon('close', '0 0 24 24')
+			+e.H2.title.h3 #{ data.title }
+			+e.subtitle #{ data.subtitle }
+			+e.FORM.form.js-form(action='#')
+				+e.fields.flex._row._wrap
+					each item, index in data.fields
+						if item.isSelect
+							+select(item)
+						else
+							if item.type === 'email' && data.isChangingTelephone
+								+field(item).is-hidden
+							else
+								+field(item)
+							if index === 2 && data.isChangingTelephone
+								+changing-button
+				+e.form-footer.flex._start._justify
+					+e.policy 
+						| Нажимая кнопку «Отправить» вы принимаете условия&nbsp;
+						a(href='#') Политики конфиденциальности&nbsp;
+						| и&nbsp;
+						a(href='#') Обработки персональных данных
+					+button(popupData.button)
+						| Заказать

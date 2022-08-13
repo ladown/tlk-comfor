@@ -1,0 +1,26 @@
+-
+	var leadData = {
+		title: 'Уже работаете <br/>с транспортной компанией?',
+		subtitle: 'Рассчитайте в ТЛК КОМФОРТ стоимость ваших регулярных перевозок и сравните предложения',
+		backgroundDesktop: [
+			`${imgPath}background/lead-bg-1.svg`,
+			`${imgPath}background/lead-bg-2.svg`,
+		],
+		backgroundMobile: `${imgPath}background/lead-bg-mobile.svg`,
+	};
+
++b.SECTION.lead
+	+e.wrap.wrap.flex._center._vertical._column.text-center
+		+e.H2.title.h2.js-reveal-slideUp !{ leadData.title }
+		+e.subtitle.js-reveal-slideUp #{ leadData.subtitle }
+		+button.js-popup-service-trigger.js-reveal-slideUp
+			| Рассчитать бесплатно
+	+e.background._desktop.mobile-hidden.flex._justify
+		each item, index in leadData.backgroundDesktop
+			+e.IMG.background-photo(
+				class=`_${index + 1}`
+				src=item
+				alt='background-photo')
+	+e.IMG.background._mobile.from-mobile-hidden(
+		src=leadData.backgroundMobile
+		alt='background-photo')

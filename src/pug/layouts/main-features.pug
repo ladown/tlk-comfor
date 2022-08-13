@@ -1,0 +1,46 @@
+-
+	var mainFeaturesData = {
+		items: [
+			{
+				caption: 'Доставка в любую точку РФ',
+				text: 'Мы работаем по всей России и готовы доставить ваш груз в любую точку страны, включая труднодоступные районы и отдаленные территории.',
+			},
+			{
+				caption: 'Оптимальное решение для доставки',
+				text: 'Используем любые возможные виды транспорта (авто, авиа, железная дорога, водный транспорт, включая перевозку негабаритных грузов). Обеспечим лучшее соотношение стоимости и сроков выполнения.',
+			},
+			{
+				caption: 'Простой и понятный алгоритм заказа',
+				text: 'Наши операторы помогут вам грамотно оформить заказ. У нас вы максимально быстро и просто получите именно то, что вам нужно.',
+			},
+			{
+				caption: 'Гарантия сохранности груза',
+				text: 'На всем пути следования мы обеспечиваем полную сохранность доверенных нам отправлений. На 100% соблюдаем требования заказчика к условиям транспортировки.',
+			},
+		],
+
+		photo: `${imgPath}main-features-photo.svg`
+	};
+
++b.SECTION.main-features
+	+e.wrap.wrap
+		+e.cell._left
+			each item, index in mainFeaturesData.items
+				if index <= 1
+					+e.item.js-reveal-slideUp
+						+e.item-label.flex._right
+							+icon('union', '0 0 24 24')
+						+e.item-caption #{ item.caption }
+						+e.item-text #{ item.text }
+		+e.cell._center
+			+e.IMG.photo.js-reveal-fadeIn(
+				src=mainFeaturesData.photo
+				alt='main-features-photo')
+		+e.cell._right
+			each item, index in mainFeaturesData.items
+				if index > 1
+					+e.item.js-reveal-slideUp
+						+e.item-label.flex._right
+							+icon('union', '0 0 24 24')
+						+e.item-caption #{ item.caption }
+						+e.item-text #{ item.text }

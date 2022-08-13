@@ -1,0 +1,12 @@
+mixin search(data = {})
+	+e.search.search__
+		+e.FORM.form(action='#')
+			+e.INPUT.input(
+				type='text'
+				name='search'
+				placeholder='Поиск по сайту'
+				autocomplete='off')
+			+e.BUTTON.button.flex._vertical._right
+				+icon('search', '0 0 16 16')
+		+e.BUTTON.trigger
+			+icon('search', '0 0 16 16')

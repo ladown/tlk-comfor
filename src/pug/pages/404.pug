@@ -1,0 +1,9 @@
+extends ../layouts/layout.pug
+
+block append vars
+	- body.classList = 'error-page';
+	- title = '404 Ошибка';
+	- withOutFooter = true;
+
+block content
+	include ../layouts/error

@@ -1,0 +1,89 @@
+@keyframes Puls {
+	0% {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(0);
+	}
+
+	to {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+@keyframes FadeInSlideUp {
+	from {
+		visibility: hidden;
+		transform: translateY(4rem);
+		opacity: 0;
+	}
+	to {
+		visibility: visible;
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes FadeOutSlideDown {
+	from {
+		visibility: visible;
+		transform: translateY(0);
+		opacity: 1;
+	}
+	to {
+		visibility: hidden;
+		transform: translateY(4rem);
+		opacity: 0;
+	}
+}
+
+@keyframes FadeOutSlideLeft {
+	from {
+		visibility: visible;
+		transform: translateX(0);
+		opacity: 1;
+	}
+	to {
+		visibility: hidden;
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+}
+
+@keyframes FadeInSlideLeft {
+	from {
+		visibility: hidden;
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	to {
+		visibility: visible;
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes FadeOutSlideRight {
+	from {
+		visibility: visible;
+		transform: translateX(0);
+		opacity: 1;
+	}
+	to {
+		visibility: hidden;
+		transform: translateX(100%);
+		opacity: 0;
+	}
+}
+
+@keyframes FadeInSlideRight {
+	from {
+		visibility: hidden;
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	to {
+		visibility: visible;
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
