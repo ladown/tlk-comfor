@@ -19,89 +19,89 @@
 					items: [
 						[
 							{
-								href: '#',
+								href: '/services-inner.html',
 								label: 'Автомобильные',
 								links: [
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 								],
 							},
 							{
-								href: '#',
+								href: '/services-inner.html',
 								label: 'Железнодорожные',
 								links: [
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 								],
 							},
 							{
-								href: '#',
+								href: '/services-inner.html',
 								label: 'Морские',
 								links: [
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 								],
 							},
 							{
-								href: '#',
+								href: '/services-inner.html',
 								label: 'Авиа',
 								links: [
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										text: 'Название услуги',
 									},
 								],
@@ -111,23 +111,23 @@
 							{
 								labels: [
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Крановые работы',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Курьерские услуги',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Маркировка',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Крановые работы',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Курьерские услуги',
 									},
 								]
@@ -135,23 +135,23 @@
 							{
 								labels: [
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Такелажные работы',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Упаковка груза',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Возврат  оригиналов документов ',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Такелажные работы',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Упаковка груза',
 									},
 								]
@@ -159,23 +159,23 @@
 							{
 								labels: [
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Погрузо-разгрузочные работы',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Консолидация груза',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Внутритарный учет',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Погрузо-разгрузочные работы',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Консолидация груза',
 									},
 								]
@@ -183,23 +183,23 @@
 							{
 								labels: [
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Крепление груза',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Сортировка',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Доставка до склада грузоотправителя',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Крепление груза',
 									},
 									{
-										href: '#',
+										href: '/service.html',
 										label: 'Сортировка',
 									},
 								],
@@ -226,7 +226,8 @@ mixin header(data = {})
 				+e.A.logo.flex(href='/')
 					+e.IMG.logo-img(
 						src=headerData.logo
-						alt='tlk-comfort-logo')
+						alt='tlk-comfort-logo'
+						loading='lazy')
 					+e.logo-text ТЛК КОМФОРТ
 				+e.A.phone(href='tel:+74953766110') +7 495 376 61 10
 				+e.BUTTON.callback.js-popup-callback-trigger Заказать звонок
@@ -235,9 +236,11 @@ mixin header(data = {})
 					span
 			+e.row._menu.flex.js-header-menu.js-tabs
 				+search
-				each link in headerData.links
+				each link, linkIndex in headerData.links
 					+e.block
-						+e.A.link.flex._vertical(href=link.href class=link.subblock && 'js-header-subblock-trigger')
+						+e.A.link.flex._vertical(
+							href=link.href
+							class=`${link.subblock  ? 'js-header-subblock-trigger' : ''} ${activeHeaderLink === linkIndex ? 'is-active' : '' }`)
 							+e.link-text #{ link.text }
 							if link.subblock
 								+e.link-icon

@@ -1,0 +1,71 @@
+extends ../layouts/layout.pug
+
+block append vars
+	- title = 'Автоперевозки';
+
+block content
+	-
+		var servicesAdditionalData = {
+			mods: ['services-inner'],
+
+			items: [
+				{
+					href: '/service.html',
+					photo: `${imgPath}additional-service-1.png`,
+					caption: 'Крановые работы',
+				},
+				{
+					href: '/service.html',
+					photo: `${imgPath}additional-service-2.png`,
+					caption: 'Погрузо-разгрузочные работы',
+				},
+				{
+					href: '/service.html',
+					photo: `${imgPath}additional-service-3.png`,
+					caption: 'Такелажные работы',
+				},
+				{
+					href: '/service.html',
+					photo: `${imgPath}additional-service-4.png`,
+					caption: 'Курьерские услуги',
+				},
+				{
+					href: '/service.html',
+					photo: `${imgPath}additional-service-5.png`,
+					caption: 'Крепление груза',
+				},
+				{
+					href: '/service.html',
+					photo: `${imgPath}additional-service-6.png`,
+					caption: 'Упаковка груза',
+				},
+				{
+					href: '/service.html',
+					photo: `${imgPath}additional-service-7.png`,
+					caption: 'Консолидация груза',
+				},
+				{
+					href: '/service.html',
+					photo: `${imgPath}additional-service-8.png`,
+					caption: 'Сортировка',
+				},
+			],
+		};
+		var breadcrumbs = [
+			{
+				href: '/main.html',
+				text: 'Главная',
+			},
+			{
+				href: '/services.html',
+				text: 'Услуги',
+			},
+			{
+				text: 'Автоперевозки',
+			},
+		];
+
+	+common-header
+		| Автоперевозки
+	+breadcrumbs(breadcrumbs)
+	+services-additional(servicesAdditionalData)

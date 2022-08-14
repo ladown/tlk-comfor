@@ -153,7 +153,7 @@
 		+e.content.js-reveal-fadeIn
 			each slider, index in mainNewsData.content
 				+e.slider-outer.js-tabs-content(class=index === 0 && 'is-active')
-					+e.slider.swiper.js-main-news-slider
+					+e.slider.swiper.js-slider-main-news
 						.swiper-wrapper
 							each item in slider 
 								+e.A.slide.swiper-slide(href='#')
@@ -164,6 +164,7 @@
 											+e.slide-month #{ item.date.month }
 											+e.slide-year #{ item.date.year }
 									+e.slide-background.flex._end._right._column
-										img(
+										img.unreached(
 											src=`${imgPath}common/logo_transparent.svg`
-											alt='logo')
+											alt='logo'
+											loading='lazy')

@@ -1,0 +1,50 @@
+.circle-progress {
+	position: relative;
+	width: 60rem;
+	height: 60rem;
+
+	&__background {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+
+		@extend %flex-center;
+	}
+
+	&__border {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		stroke-width: 1;
+		stroke-linecap: round;
+		fill: transparent;
+
+		&-back {
+			stroke: rgba(#fff, 0.2);
+		}
+
+		&-bar {
+			stroke: #fff;
+			z-index: 5;
+			stroke-dashoffset: 131.88;
+			stroke-dasharray: 175.84 175.84;
+			transform: rotate(-90deg);
+			transform-origin: 50% 50%;
+			transition: stroke-dashoffset 0.35s linear;
+		}
+	}
+
+	&__text {
+		font-size: 17rem;
+		line-height: 1.4;
+		color: #ffffff;
+
+		@include to(580px) {
+			font-size: 16rem;
+		}
+	}
+}

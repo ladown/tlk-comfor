@@ -1,0 +1,52 @@
+-
+	var serviceFeaturesData = {
+		title: 'Преимущества грузоперевозок с ТЛК Комфорт',
+
+		features: [
+			{
+				icon: `${imgPath}service-feature-1.png`,
+				text: 'Высокая экспертиза в экспресс-логистике',
+			},
+			{
+				icon: `${imgPath}service-feature-2.png`,
+				text: 'Гарантия сохранности груза',
+			},
+			{
+				icon: `${imgPath}service-feature-3.png`,
+				text: 'Высокая скорость грузоперевозок',
+			},
+			{
+				icon: `${imgPath}service-feature-4.png`,
+				text: 'Оптимальные транспортные тарифы',
+			},
+			{
+				icon: `${imgPath}service-feature-5.png`,
+				text: 'Индивидуальный подход к каждому клиенту',
+			},
+			{
+				icon: `${imgPath}service-feature-6.png`,
+				text: 'Приоретизация на всем пути следования',
+			},
+			{
+				icon: `${imgPath}service-feature-7.png`,
+				text: 'Быстрый документооборот',
+			},
+			{
+				icon: `${imgPath}service-feature-8.png`,
+				text: '100% соблюдение сроков',
+			},
+		],
+	};
+
++b.SECTION.service-features
+	+e.wrap.wrap
+		+e.H2.title.h2.js-reveal-fadeIn #{ serviceFeaturesData.title }
+		+e.items
+			each item in serviceFeaturesData.features
+				+e.item.js-reveal-slideUp.js-reveal-interval
+					+e.item-icon
+						img.object-fit(
+							src=item.icon
+							alt='service-features-icon'
+							loading='lazy')
+					+e.item-text #{ item.text }

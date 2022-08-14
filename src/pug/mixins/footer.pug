@@ -33,54 +33,54 @@
 		nav: [
 			{
 				label: {
-					href: '#',
+					href: '/services.html',
 					text: 'Услуги',
 				},
 
 				links: [
 					{
-						href: '#',
+						href: '/service.html',
 						text: 'Автоперевозки грузов',
 					},
 					{
-						href: '#',
+						href: '/service.html',
 						text: 'Доставка сборных грузов',
 					},
 					{
-						href: '#',
+						href: '/service.html',
 						text: 'Авиаперевозка грузов',
 					},
 					{
-						href: '#',
+						href: '/service.html',
 						text: 'Контейнерные грузоперевозки',
 					},
 					{
-						href: '#',
+						href: '/service.html',
 						text: 'Железнодорожные перевозки',
 					},
 					{
-						href: '#',
+						href: '/service.html',
 						text: 'Проектные перевозки',
 					},
 					{
-						href: '#',
+						href: '/service.html',
 						text: 'Таможенное оформление',
 					},
 					{
-						href: '#',
+						href: '/service.html',
 						text: 'Складские услуги',
 					},
 				],
 			},
 			{
 				label: {
-					href: '#',
+					href: '/main.html',
 					text: 'ТЛК «Комфорт»',
 				},
 
 				links: [
 					{
-						href: '#',
+						href: '/about.html',
 						text: 'О компании',
 					},
 					{
@@ -92,11 +92,11 @@
 						text: 'Наши кейсы',
 					},
 					{
-						href: '#',
+						href: '/news.html',
 						text: 'Новости',
 					},
 					{
-						href: '#',
+						href: '/contacts.html',
 						text: 'Контакты',
 					},
 				],
@@ -125,8 +125,7 @@ mixin footer(data = {})
 								+e.nav-items.flex._column._start
 									each link in item.links
 										+e.A.nav-link(href=link.href) #{ link.text }
-					+e.BUTTON.scroll-top.js-scroll-top
-						+icon('arrowDown', '0 0 24 24')
+					+round-arrow({isScroller: true})
 			+e.row._bottom.flex._vertical
 				p © 2022 ТЛК «Комфорт»
 				a(href='#') Конфиденциальность

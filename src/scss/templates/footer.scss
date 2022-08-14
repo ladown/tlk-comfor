@@ -307,37 +307,15 @@
 		}
 	}
 
-	&__scroll-top {
+	&__round-arrow {
 		position: absolute;
 		right: 0;
-		background-color: rgba(20, 45, 59, 0.08);
-		width: 40rem;
-		height: 40rem;
-		border-radius: 100%;
-		fill: transparent;
-		stroke: $dark;
-		stroke-width: 1.5;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		transition: stroke 0.3s linear, background-color 0.3s linear;
-
 		@include from(981px) {
 			top: 67rem;
 		}
 
 		@include to(980px) {
 			bottom: 20rem;
-		}
-
-		&:hover {
-			background-color: $orange;
-			stroke: #fff;
-		}
-
-		svg {
-			width: 24rem;
-			height: 24rem;
-			transform: rotate(180deg);
 		}
 	}
 }

@@ -1,0 +1,27 @@
+-
+	var aboutHeroData = {
+		title: 'ТЛК Комфорт',
+
+		text: 'Мы современная независимая транспортная компания, осуществляющая промышленные грузоперевозки любых габаритов и веса в любую точку Российской Федерации, надежный партнёр и отвественный работодатель.',
+
+		background: {
+			mobile: `${imgPath}background/about-hero-bg-mobile.jpg`,
+			default: `${imgPath}background/about-hero-bg.jpg`,
+		},
+	};
+
++b.SECTION.about-hero
+	+e.wrap.wrap
+		+e.H1.title.text-center.js-reveal-scale.js-reveal-interval #{ aboutHeroData.title }
+		+e.subtitle.flex._justify
+			+e.text.js-reveal-slideUp.js-reveal-interval #{ aboutHeroData.text }
+			+round-arrow.js-reveal-slideUp.js-reveal-interval
+	+e.PICTURE.background
+		source(
+			srcset=aboutHeroData.background.mobile
+			media='(max-width: 580px)')
+		img.object-fit.unreached(
+			src=aboutHeroData.background.default
+			alt='about-hero-background'
+			loading='lazy')
+	+text-outlined.js-reveal-slideLeft.js-reveal-viewFactor.js-reveal-interval

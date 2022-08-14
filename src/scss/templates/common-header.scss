@@ -1,0 +1,16 @@
+.common-header {
+	padding: 234rem 0 24rem;
+	background-color: $dark;
+
+	@include to(980px) {
+		padding: 200rem 0 34rem;
+	}
+
+	@include to(580px) {
+		padding: 114rem 0 20rem;
+	}
+
+	&__title {
+		color: #fff;
+	}
+}

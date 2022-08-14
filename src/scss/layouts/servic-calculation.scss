@@ -1,0 +1,186 @@
+.servic-calculation {
+	overflow: hidden;
+	padding: 80rem 0 120rem;
+	background-color: $dark;
+
+	@include to(980px) {
+		padding: 55rem 0 90rem;
+	}
+
+	@include to(768px) {
+		padding-bottom: 220rem;
+	}
+
+	@include to(580px) {
+		padding-top: 30rem;
+	}
+
+	&__wrap {
+		position: relative;
+	}
+
+	&__title {
+		font-weight: 600;
+		color: #fff;
+
+		@include to(580px) {
+			width: calc(div(317, 384) * 100%);
+		}
+	}
+
+	&__form {
+		margin-top: 70rem;
+
+		@include to(980px) {
+			margin-top: 58rem;
+		}
+
+		@include to(580px) {
+			margin-top: 24rem;
+		}
+	}
+
+	&__fields {
+		&-row {
+			@include to(768px) {
+				flex-wrap: wrap;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 40rem;
+
+				@include to(580px) {
+					margin-bottom: 24rem;
+				}
+			}
+		}
+
+		&-icon {
+			flex: 0 0 auto;
+			width: 32rem;
+			margin: 0 22rem;
+			fill: $orange;
+
+			@include to(768px) {
+				margin: 20rem auto;
+				width: 44rem;
+			}
+
+			@include to(580px) {
+				margin-top: 10rem;
+				margin-bottom: 10rem;
+				width: 32rem;
+			}
+
+			svg {
+				width: 32rem;
+
+				@include to(768px) {
+					width: 44rem;
+				}
+
+				@include to(580px) {
+					width: 32rem;
+				}
+			}
+		}
+	}
+
+	&__select {
+		flex: 0 1 436rem;
+
+		@include to(768px) {
+			flex-basis: 100%;
+		}
+
+		&:nth-child(1) {
+			z-index: 2;
+		}
+
+		&:nth-child(3) {
+			z-index: 1;
+		}
+
+		.select {
+			&__options {
+				&-outer {
+					max-height: 220rem;
+
+					@include to(980px) {
+						max-height: 180deg;
+					}
+				}
+			}
+		}
+	}
+
+	&__field {
+		flex: 0 1 206rem;
+
+		@include from(769px) {
+			margin-right: 24rem;
+		}
+
+		@include to(768px) {
+			flex-basis: calc(50% - 20rem);
+			flex-grow: 1;
+		}
+
+		&:first-child {
+			@include to(768px) {
+				margin-right: 20rem;
+			}
+		}
+
+		.field {
+			&__item {
+				padding: 20rem;
+				font-size: 18rem;
+
+				@include to(580px) {
+					padding: 15rem 20rem;
+				}
+			}
+		}
+	}
+
+	&__button {
+		z-index: 1;
+
+		@include from(769px) {
+			margin-left: 52rem;
+		}
+
+		@include to(768px) {
+			margin: 24rem auto 0;
+			width: 300rem;
+		}
+
+		@include to(580px) {
+			width: 100%;
+		}
+	}
+
+	&__photo {
+		position: absolute;
+		right: -260rem;
+		top: -80rem;
+		width: 616rem;
+		height: 434rem;
+
+		@include to(980px) {
+			top: auto;
+			right: -100px;
+			bottom: -80rem;
+			width: 32%;
+			height: auto;
+		}
+
+		@include to(768px) {
+			width: 292rem;
+			height: 226rem;
+			bottom: -220rem;
+			right: 0;
+		}
+	}
+}

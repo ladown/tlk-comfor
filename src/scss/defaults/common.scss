@@ -248,3 +248,20 @@ svg {
 .is-hidden {
 	display: none !important;
 }
+
+.unreached {
+	user-select: none;
+	pointer-events: none;
+}
+
+.unselected {
+	user-select: none;
+}
+
+.unpicked {
+	pointer-events: none;
+}
+
+.color-orange {
+	color: $orange;
+}

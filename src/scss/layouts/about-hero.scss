@@ -1,0 +1,106 @@
+.about-hero {
+	position: relative;
+	padding: 326rem 0 120rem;
+	overflow: hidden;
+
+	@include to(980px) {
+		padding: 280rem 0 80rem;
+	}
+
+	@include to(580px) {
+		padding: 240rem 0 40rem;
+	}
+
+	&__wrap {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 196rem;
+		line-height: 1;
+		color: #fff;
+
+		@include to(1450px) {
+			font-size: 184rem;
+		}
+
+		@include to(980px) {
+			font-size: 13vw;
+		}
+
+		@include to(768px) {
+			font-size: 12vw;
+		}
+
+		@include to(580px) {
+			font-size: 13vw;
+		}
+	}
+
+	&__subtitle {
+		margin-top: 220rem;
+
+		@include to(980px) {
+			margin-top: 130rem;
+		}
+
+		@include to(580px) {
+			margin-top: 60rem;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__text {
+		width: 100%;
+		max-width: 500rem;
+		font-size: 17rem;
+		line-height: 1.45;
+		color: #ffffff;
+
+		@include to(580px) {
+			max-width: calc(div(371, 383) * 100%);
+			font-size: 16rem;
+		}
+	}
+
+	&__round-arrow {
+		align-self: flex-end;
+		background-color: #fff;
+		stroke: #000;
+		stroke-linecap: inherit;
+		stroke-linejoin: inherit;
+
+		@include to(580px) {
+			margin-top: 100rem;
+		}
+
+		svg {
+			transform: rotate(0);
+		}
+	}
+
+	&__text-outlined {
+		width: 3935rem;
+		height: auto;
+		left: 32.6%;
+		bottom: -24rem;
+		opacity: 0.2;
+
+		@include to(1450px) {
+			left: 375rem;
+		}
+
+		@include to(980px) {
+			width: 2900rem;
+			left: 25%;
+		}
+
+		@include to(580px) {
+			width: 1936rem;
+			bottom: -16rem;
+			left: 20%;
+		}
+	}
+}

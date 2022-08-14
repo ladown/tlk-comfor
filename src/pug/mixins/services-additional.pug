@@ -1,0 +1,14 @@
+mixin services-additional(data = {})
+	+b.SECTION.services-additional(class=`${data.mods ? `${data.mods.join(' _')}` : ''}`)
+		+e.wrap.wrap
+			+common-caption 
+				| Дополнительные услуги
+			+e.items.flex._row._wrap
+				each item in data.items
+					+e.A.item.text-center.flex._column._nowrap._vertical.js-reveal-slideUp.js-reveal-interval(href=item.href)
+						+e.item-photo
+							img.object-fit(
+								src=item.photo
+								alt='services-additional-photo'
+								loading='lazy')
+						+e.item-caption #{ item.caption }

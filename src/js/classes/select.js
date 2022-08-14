@@ -2,7 +2,7 @@
 
 import { gsap } from 'gsap';
 
-export class Select {
+class Select {
 	constructor(select) {
 		this.isOpened = false;
 		this.select = select;
@@ -126,3 +126,5 @@ export class Select {
 		this.setListenerForDocument();
 	}
 }
+
+export default Select;

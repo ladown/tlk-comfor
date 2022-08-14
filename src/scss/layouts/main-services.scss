@@ -1,4 +1,4 @@
-.additional-services {
+.main-services {
 	padding: 60rem 0 80rem;
 	background-color: $dark;
 
@@ -74,8 +74,14 @@
 		line-height: div(16, 14);
 		color: #ffffff;
 		border: 1px solid #ff6f3c;
+		background-color: transparent;
 		border-radius: 100px;
 		margin: 8rem;
+		transition: background-color 0.3s linear;
+
+		&:hover {
+			background-color: $orange;
+		}
 
 		@include to(580px) {
 			padding: 14rem 18rem;

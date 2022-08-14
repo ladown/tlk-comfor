@@ -14,6 +14,15 @@
 		user-select: none;
 		transition: border 0.3s linear;
 
+		.select_transparent & {
+			border-color: #fff;
+			background-color: $dark;
+		}
+
+		.select_transparent.is-opened & {
+			border-color: $orange;
+		}
+
 		.is-opened & {
 			border-color: $orange;
 		}
@@ -31,6 +40,11 @@
 			letter-spacing: 0;
 			transition: color 0.3s linear;
 
+			.select_transparent & {
+				color: #fff;
+				background-color: $dark;
+			}
+
 			.is-opened & {
 				color: $dark;
 			}
@@ -46,6 +60,14 @@
 
 			.is-filled & {
 				color: #001e42;
+			}
+
+			.select_transparent & {
+				color: rgba(255, 255, 255, 0.3);
+			}
+
+			.select_transparent.is-filled & {
+				color: #fff;
 			}
 		}
 
@@ -100,6 +122,11 @@
 			@include to(580px) {
 				padding: 35rem 10rem 16rem;
 				max-height: 300rem;
+			}
+
+			.select_transparent & {
+				background-color: $dark;
+				color: rgba(255, 255, 255, 0.3);
 			}
 		}
 	}

@@ -1,0 +1,162 @@
+.about-info {
+	margin-top: -160rem;
+	position: relative;
+	overflow: hidden;
+
+	@include to(980px) {
+		margin-top: -80rem;
+	}
+
+	@include to(768px) {
+		background-color: $orange;
+	}
+
+	@include to(580px) {
+		margin-top: 0;
+	}
+
+	&__wrap {
+		position: relative;
+		@include to(1440px) {
+			padding: 0;
+		}
+	}
+
+	&__description {
+		background-color: $orange;
+		padding: 80rem 9% 60rem;
+
+		@include from(769px) {
+			min-height: 516rem;
+			overflow: hidden;
+		}
+
+		@include to(980px) {
+			padding: 68rem 30rem 47rem;
+		}
+
+		@include to(768px) {
+			position: relative;
+			order: 2;
+		}
+
+		@include to(580px) {
+			padding: 56rem 15rem 34rem;
+		}
+	}
+
+	&__slider-buttons {
+		margin-right: 9%;
+
+		@include to(980px) {
+			margin-right: 50rem;
+		}
+
+		@include to(768px) {
+			position: absolute;
+			top: -30rem;
+			left: 30rem;
+			z-index: 2;
+		}
+
+		@include to(580px) {
+			display: flex;
+			left: 15rem;
+		}
+	}
+
+	&__title {
+		position: relative;
+		color: #fff;
+		z-index: 2;
+
+		@include to(580px) {
+			width: calc(div(320, 384) * 100%);
+		}
+	}
+
+	&__text-slider {
+		margin-top: 100rem;
+
+		@include from(769px) {
+			&.swiper {
+				overflow: visible;
+			}
+		}
+
+		@include to(980px) {
+			margin-top: 60rem;
+		}
+
+		@include to(580px) {
+			margin-top: 15rem;
+		}
+	}
+
+	&__text {
+		width: 100%;
+		max-width: 320rem;
+		font-size: 17rem;
+		line-height: 1.4;
+		color: #ffffff;
+
+		@include to(768px) {
+			max-width: 100%;
+		}
+
+		@include to(580px) {
+			max-width: calc(div(320, 384) * 100%);
+			font-size: 16rem;
+		}
+	}
+
+	&__circle-progress {
+		margin-top: 60rem;
+
+		@include to(980px) {
+			margin-top: 45rem;
+		}
+
+		@include to(580px) {
+			margin-top: 35rem;
+		}
+	}
+
+	&__photo-slider {
+		&.swiper {
+			@include from(769px) {
+				position: absolute;
+				left: 39%;
+				width: 858rem;
+				height: 516rem;
+				z-index: 1;
+			}
+
+			@include from(1440px) {
+				right: -235rem;
+				left: auto;
+			}
+
+			@include to(768px) {
+				width: 100%;
+				order: 1;
+			}
+		}
+	}
+
+	&__photo-slide {
+		@include to(768px) {
+			&::before {
+				content: '';
+				display: block;
+				padding-top: 50%;
+			}
+		}
+
+		@include to(580px) {
+			&::before {
+				padding-top: calc(div(272, 414) * 100%);
+			}
+		}
+	}
+}

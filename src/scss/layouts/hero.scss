@@ -10,6 +10,11 @@
 		padding: 135rem 0 35rem;
 	}
 
+	&__wrap {
+		position: relative;
+		z-index: 2;
+	}
+
 	&__label {
 		&-icon {
 			flex: 0 0 auto;
@@ -152,12 +157,6 @@
 		@include to(580px) {
 			font-size: 14rem;
 			margin-top: 20rem;
-		}
-	}
-
-	&__background {
-		&-photo {
-			z-index: -1;
 		}
 	}
 }

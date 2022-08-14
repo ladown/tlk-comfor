@@ -13,22 +13,22 @@
 			{
 				photo: `${imgPath}types-1.svg`,
 				text: 'Этот способ позволяет перевозить почти все виды грузов. Основное его достоинство — возможность доставки «от двери до двери». Это значит, что доставка происходит без перегрузов на другой транспорт в процессе движения по маршруту.',
-				linkHref: '#',
+				linkHref: '/service.html',
 			},
 			{
 				photo: `${imgPath}types-2.svg`,
 				text: 'Перевозка железнодорожным транспортом имеет ряд значительных преимуществ. Прежде всего, этот способ — один из самых доступных по цене. В России по железной дороге можно транспортировать все виды грузов.',
-				linkHref: '#',
+				linkHref: '/service.html',
 			},
 			{
 				photo: `${imgPath}types-3.svg`,
 				text: 'Ключевое преимущество авиаперевозок — скорость. Кроме того, авиатехника используется для доставки в самые труднодоступные районы России. Таким образом, авиация — это самый быстрый, а иногда и единственно возможный вид транспорта для перевозки грузов',
-				linkHref: '#',
+				linkHref: '/service.html',
 			},
 			{
 				photo: `${imgPath}types-4.svg`,
 				text: 'Прежде всего, этот способ — один из самых доступных по цене. В России по железной дороге можно транспортировать все виды грузов.',
-				linkHref: '#',
+				linkHref: '/service.html',
 			},
 		],
 	};
@@ -36,7 +36,7 @@
 +b.SECTION.types.js-tabs(data-tabs-own-animation='true')
 	+e.wrap.wrap
 		+e.header.flex._justify
-			+e.title.h3.js-reveal-fadeIn #{ typesData.title }
+			+e.H2.title.h3.js-reveal-fadeIn #{ typesData.title }
 			+e.tabs-outer.js-reveal-fadeIn
 				+e.tabs.flex.js-tabs-parent
 					each tab, index in typesData.tabs
@@ -48,9 +48,9 @@
 						+e.item-cell._description.flex._column._justify._start
 							+e.item-text #{ item.text }
 							+button({href: item.linkHref, mods: ['gray']})
-								|
 								| Подробнее
 						+e.item-cell._photo.flex
 							+e.IMG.item-photo(
 								src=item.photo
-								alt='item-photo')
+								alt='item-photo'
+								loading='lazy')

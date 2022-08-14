@@ -15,6 +15,12 @@
 		color: rgba(0, 30, 66, 0.4);
 		letter-spacing: 0;
 		transition: color 0.3s linear;
+
+		.field_transparent & {
+			background-color: $dark;
+			border-color: #fff;
+			color: #fff;
+		}
 	}
 
 	&__item {
@@ -50,6 +56,10 @@
 
 		&::placeholder {
 			color: rgba(0, 30, 66, 0.2);
+
+			.field_transparent & {
+				color: rgba(255, 255, 255, 0.3);
+			}
 		}
 
 		&:is(textarea) {
@@ -62,6 +72,20 @@
 
 			@include to(580px) {
 				height: 110rem;
+			}
+		}
+
+		.field_transparent & {
+			border-color: #fff;
+			background-color: $dark;
+			color: #fff;
+
+			& ~ .field__label {
+				color: #fff;
+			}
+
+			&:focus {
+				border-color: $orange;
 			}
 		}
 	}

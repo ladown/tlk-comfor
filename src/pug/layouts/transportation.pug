@@ -1,0 +1,36 @@
+-
+	var transportationData = {
+		title: 'Мультимодальные перевозки',
+
+		subtitle: 'Поэтапная доставка грузов с использованием нескольких видов транспорта',
+
+		button: {
+			href: '/service.html',
+			icon: {
+				name: 'arrowRight',
+				viewBox: '0 0 12 12',
+			},
+		},
+
+		background: {
+			mobile: `${imgPath}background/transportation-bg.jpg`,
+			default: `${imgPath}background/transportation-bg.jpg`,
+		},
+	};
+
++b.SECTION.transportation
+	+e.wrap.wrap.flex
+		+e.description.flex._column._start
+			+e.H2.title.h3.js-reveal-slideUp.js-reveal-interval #{ transportationData.title }
+			+e.subtitle.js-reveal-slideUp.js-reveal-interval #{ transportationData.subtitle }
+			+button(transportationData.button).js-reveal-slideUp.js-reveal-interval
+				| Подробнее
+		+e.PICTURE.background.unreached.js-reveal-slideLeft
+			picture(
+				srcset=transportationData.background.mobile
+				media='(max-width: 580px)')
+			img.object-fit(
+				src=transportationData.background.default
+				alt='transportation-photo'
+				loading='lazy')
+	+text-outlined.js-reveal-slideRight.js-reveal-viewFactor.js-reveal-interval

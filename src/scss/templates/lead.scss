@@ -3,7 +3,6 @@
 	padding: 110rem 0;
 	margin-top: 150rem;
 	background-color: $dark;
-	z-index: 1;
 	overflow: hidden;
 
 	@include to(980px) {
@@ -14,6 +13,11 @@
 	@include to(580px) {
 		padding: 60rem 0 275rem;
 		margin-top: 35rem;
+	}
+
+	&__wrap {
+		position: relative;
+		z-index: 1;
 	}
 
 	&__title {
@@ -51,7 +55,6 @@
 
 	&__background {
 		position: absolute;
-		z-index: -1;
 
 		&_desktop {
 			left: 0;

@@ -25,7 +25,7 @@
 		"url": "https://ermilovee.ru"
 	},
 	"scripts": {
-		"start": "rm -r build/ && webpack serve -c webpack/webpack.dev.js",
+		"start": "webpack serve -c webpack/webpack.dev.js",
 		"build": "webpack -c webpack/webpack.prod.js",
 		"zipbuild": "webpack -c webpack/webpack.prod.js && zip -r build.zip build"
 	},

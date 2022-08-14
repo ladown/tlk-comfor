@@ -1,0 +1,41 @@
+.breadcrumbs {
+	padding-top: 24rem;
+
+	@include to(580px) {
+		padding-top: 20rem;
+	}
+
+	&__link {
+		flex: 0 1 auto;
+		font-size: 14rem;
+		line-height: div(16, 14);
+		@extend %text-overflow;
+
+		@include to(580px) {
+			font-size: 12rem;
+			line-height: div(14, 12);
+		}
+
+		&:not(:last-child) {
+			transition: color 0.3s linear;
+
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
+
+	&__divider {
+		flex: 0 0 auto;
+		width: 8rem;
+		height: 8rem;
+		margin: 0 8rem;
+		fill: $orange;
+
+		@include to(580px) {
+			width: 6rem;
+			height: 6rem;
+			margin: 0 6rem;
+		}
+	}
+}

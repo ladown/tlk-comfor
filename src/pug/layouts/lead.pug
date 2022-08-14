@@ -15,12 +15,14 @@
 		+e.subtitle.js-reveal-slideUp #{ leadData.subtitle }
 		+button.js-popup-service-trigger.js-reveal-slideUp
 			| Рассчитать бесплатно
-	+e.background._desktop.mobile-hidden.flex._justify
+	+e.background._desktop.mobile-hidden.flex._justify.unreached
 		each item, index in leadData.backgroundDesktop
 			+e.IMG.background-photo(
-				class=`_${index + 1}`
+				class=`_${index + 1} ${index === 0 ? 'js-reveal-slideRight' : 'js-reveal-slideLeft'}`
 				src=item
-				alt='background-photo')
-	+e.IMG.background._mobile.from-mobile-hidden(
+				alt='background-photo'
+				loading='lazy')
+	+e.IMG.background._mobile.from-mobile-hidden.unreached.js-reveal-slideUp.js-reveal-viewFactor(
 		src=leadData.backgroundMobile
-		alt='background-photo')
+		alt='background-photo'
+		loading='lazy')

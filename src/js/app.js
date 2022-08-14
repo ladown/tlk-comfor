@@ -2,23 +2,21 @@
 
 import '../scss/app.scss';
 
-import { Select } from './modules/select';
+import Select from './classes/select';
 import Header from './modules/header';
 import HeaderSubblock from './modules/header-subblock';
-import Tabs from './modules/tabs';
-import TypesTabs from './modules/types-tabs';
-import Sliders from './modules/sliders';
+import Tabs from './classes/tabs';
+import Sliders from './sliders/sliders';
 import ScrollTop from './modules/scroll-top';
-import Popup from './modules/popup';
-import Forms from './modules/forms';
+import Popup from './classes/popup';
+import Forms from './classes/forms';
 import Reveal from './modules/reveal';
 
-import Defaults from './modules/defaults';
+import Defaults from './classes/defaults';
 
 window.addEventListener('DOMContentLoaded', () => {
 	Header.init();
 	HeaderSubblock.init();
-	TypesTabs.init();
 	Sliders();
 	ScrollTop.init();
 	new Defaults().init();

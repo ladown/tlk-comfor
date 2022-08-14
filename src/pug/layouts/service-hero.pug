@@ -1,0 +1,49 @@
+-
+	var serviceHeroData = {
+		breadcrumbs: [
+			{
+				href: '/main.html',
+				text: 'Главная',
+			},
+			{
+				href: '/services.html',
+				text: 'Услуги',
+			},
+			{
+				text: 'Мультимодальные перевозки',
+			},
+		],
+
+		title: 'Мультимодальные перевозки',
+
+		subtitle: 'Смешанные или мультимодальные перевозки — это поэтапная доставка грузов с использованием нескольких видов транспорта. Услуга широко востребованна на логистическом рынке благодаря тому, что позволяет быстро и безопасно доставлять груз, когда его импорт или экспорт на одном транспорте невозможен или сопряжен со значительными трудностями.',
+
+		button: {
+			icon: {
+				name: 'arrowRight',
+				viewBox: '0 0 12 12',
+			},
+		},
+
+		background: {
+			mobile: `${imgPath}background/services-hero-bg-mobile.jpg`,
+			default: `${imgPath}background/services-hero-bg.jpg`,
+		},
+	};
+
++b.SECTION.service-hero
+	+e.wrap.wrap
+		+e.block
+			+breadcrumbs(serviceHeroData.breadcrumbs).js-reveal-fadeIn
+			+e.H1.title.h1.js-reveal-fadeIn #{ serviceHeroData.title }
+			+e.subtitle.js-reveal-fadeIn #{ serviceHeroData.subtitle }
+			+button(serviceHeroData.button).js-popup-service-trigger.js-reveal-fadeIn
+				| Заказать услугу
+	+e.PICTURE.background.unreached
+		picture(
+			srcset=serviceHeroData.background.mobile
+			media='(max-width: 580px)')
+		img.object-fit(
+			src=serviceHeroData.background.default
+			alt='service-hero-photo'
+			loading='lazy')

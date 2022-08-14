@@ -1,0 +1,12 @@
+extends ../layouts/layout.pug
+
+block append vars
+	- title = 'О компании';
+	- activeHeaderLink = 0;
+
+block content
+	include ../layouts/about-hero
+	include ../layouts/about-value
+	include ../layouts/about-info
+	include ../layouts/about-features
+	include ../layouts/lead

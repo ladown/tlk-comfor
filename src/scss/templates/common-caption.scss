@@ -1,0 +1,12 @@
+.common-caption {
+	font-size: 17rem;
+	line-height: 1.4;
+	color: $dark;
+	padding-bottom: 16rem;
+	border-bottom: 1px solid #cfdbe3;
+
+	@include to(580px) {
+		font-size: 16rem;
+		padding-bottom: 10rem;
+	}
+}

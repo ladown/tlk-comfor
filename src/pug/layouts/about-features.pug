@@ -1,0 +1,42 @@
+-
+	var aboutFeaturesData = {
+		title: 'Наши конкурентные преимущества',
+
+		subtitle: 'Всех наших клиентов (производственные и торговые компании, индивидуальные предприниматели, средний и малый бизнес, частные лица) объединяет твердая уверенность в том, что качественные логистические услуги ТЛК «Комфорт» будут предоставлены своевременно и по приятной цене.',
+
+		items: [
+			{
+				text: 'Быстро найдем оптимальное решение для доставки',
+				photo: `${imgPath}about-feature-1.png`,
+			},
+			{
+				text: 'Простой, понятный алгоритм заказа от запроса до заявки ',
+				photo: `${imgPath}about-feature-2.png`,
+			},
+			{
+				text: 'Гарантия сохранности груза',
+				photo: `${imgPath}about-feature-3.png`,
+			},
+			{
+				text: 'Всегда на связи',
+				photo: `${imgPath}about-feature-4.png`,
+			},
+		],
+	};
+
++b.SECTION.about-features
+	+e.wrap.wrap.flex._start._justify
+		+e.cell._description
+			+e.H2.title.h2.js-reveal-fadeIn #{ aboutFeaturesData.title }
+			+e.subtitle.js-reveal-fadeIn #{ aboutFeaturesData.subtitle }
+		+e.cell._items.js-reveal-slideUp.js-reveal-viewFactor
+			+e.items.flex._row
+				each item, index in aboutFeaturesData.items
+					+e.item
+						+e.item-preview
+							+e.item-count 0#{ index + 1 }
+							+e.IMG.item-photo.object-fit(
+								src=item.photo
+								alt='about-feature-photo'
+								loading='lazy')
+						+e.item-text #{ item.text }

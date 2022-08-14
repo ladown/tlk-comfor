@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 
 const MainNewsSlider = {
 	instance: [],
-	node: document.querySelectorAll('.js-main-news-slider'),
+	node: document.querySelectorAll('.js-slider-main-news'),
 	button: {
 		prevEl: document.querySelectorAll('.main-news .js-slider-prev-btn'),
 		nextEl: document.querySelectorAll('.main-news .js-slider-next-btn'),

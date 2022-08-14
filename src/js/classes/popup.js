@@ -1,6 +1,6 @@
 'use strict';
 
-import Locker from './locker';
+import Locker from '../modules/locker';
 import { gsap } from 'gsap';
 
 class Popup {

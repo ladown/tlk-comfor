@@ -1,0 +1,95 @@
+-
+	var serviceCalculationData = {
+		title: 'Рассчитайте стоимость доставки',
+
+		fields: [
+			[
+				{
+					isSelect: true,
+					mods: ['transparent'],
+					isLabel: true,
+					label: 'Откуда',
+					placeholder: 'Комсомольск-на-Амуре',
+					inputName: 'destination_from',
+					options: [
+						'Москва',
+						'Санкт-Петербург',
+						'Новосибирск',
+						'Екатеринбург',
+						'Нижний Новгород',
+						'Ростов-на-Дону',
+						'Волгоград',
+						'Комсомольск-на-Амуре',
+						'Москва',
+						'Новосибирск',
+					],
+				},
+				{
+					isSelect: true,
+					mods: ['transparent'],
+					isLabel: true,
+					label: 'Куда',
+					placeholder: 'Комсомольск-на-Амуре',
+					inputName: 'destination_to',
+					options: [
+						'Москва',
+						'Санкт-Петербург',
+						'Новосибирск',
+						'Екатеринбург',
+						'Нижний Новгород',
+						'Ростов-на-Дону',
+						'Волгоград',
+						'Комсомольск-на-Амуре',
+						'Москва',
+						'Новосибирск',
+					],
+				},
+			],
+			[
+				{
+					mode: '_transparent',
+					label: 'Вес',
+					type: 'text',
+					name: 'weight',
+					placeholder: 'кг',
+				},
+				{
+					mode: '_transparent',
+					label: 'Объем',
+					type: 'text',
+					name: 'size',
+					placeholder: 'м3',
+				},
+				{
+					isButton: true,
+				},
+			]
+		],
+
+
+		photo: `${imgPath}service-calculation.svg`,
+	};
+
+
++b.SECTION.servic-calculation
+	+e.wrap.wrap
+		+e.H2.title.h2.js-reveal-fadeIn #{ serviceCalculationData.title }
+		+e.FORM.form(action='#')
+			+e.fields
+				each row in serviceCalculationData.fields
+					+e.fields-row.flex._vertical.js-reveal-slideUp
+						each item, index in row
+							if item.isSelect
+								+select(item)
+								if index === 0
+									+e.fields-icon
+										+icon('directionToggle', '0 0 24 36').small-tablet-hidden
+										+icon('directionToggleMobile', '0 0 36 24').min-small-tablet-hidden
+							else if item.isButton
+								+button
+									| Отправить запрос
+							else
+								+field(item)
+		+e.IMG.photo.unreached.js-reveal-slideLeft.js-reveal-viewFactor(
+			src=serviceCalculationData.photo
+			alt='serice-calculation-photo')

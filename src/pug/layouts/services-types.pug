@@ -1,0 +1,41 @@
+-
+	var servicesTypesData = {
+		title: 'Транспортные услуги',
+
+		content: [
+			{
+				photo: `${imgPath}types-1.svg`,
+				text: 'Автомобильные',
+				linkHref: '/services-inner.html',
+			},
+			{
+				photo: `${imgPath}types-2.svg`,
+				text: 'Железнодорожные',
+				linkHref: '/services-inner.html',
+			},
+			{
+				photo: `${imgPath}types-3.svg`,
+				text: 'Авиа',
+				linkHref: '/services-inner.html',
+			},
+			{
+				photo: `${imgPath}types-4.svg`,
+				text: 'Морские',
+				linkHref: '/services-inner.html',
+			},
+		],
+	};
+
++b.SECTION.services-types
+	+e.wrap.wrap
+		+common-caption
+			| #{ servicesTypesData.title }
+		+e.items.flex._row._wrap
+			each item in servicesTypesData.content
+				+e.A.item.js-reveal-slideUp.js-reveal-interval(href=item.linkHref)
+					+e.item-photo.flex._column
+						img(
+							src=item.photo
+							alt='services-types-photo'
+							loading='lazy')
+					+e.item-caption.text-center #{ item.text }

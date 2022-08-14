@@ -7,7 +7,7 @@ const Header = {
 	variables: {
 		pageScrollOffset: 0,
 		btnDataSelector: 'js-header-button',
-		widthToCloseMenu: 981,
+		widthToCloseMenu: 581,
 	},
 
 	nodes: {
@@ -92,8 +92,7 @@ const Header = {
 
 			if (
 				window.pageYOffset ||
-				(document.documentElement.scrollTop >= this.variables.pageScrollOffset &&
-					!this.nodes.block.classList.contains(this.mods.sticked))
+				(document.documentElement.scrollTop >= 1 && !this.nodes.block.classList.contains(this.mods.sticked))
 			) {
 				this.nodes.block.classList.add(this.mods.sticked);
 			}

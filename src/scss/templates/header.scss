@@ -11,6 +11,10 @@
 		padding-top: 24rem;
 	}
 
+	&.is-opened {
+		background-color: $dark;
+	}
+
 	&.is-sticked {
 		background-color: $dark;
 		padding: 15rem 0;
@@ -259,12 +263,16 @@
 			line-height: div(19, 16);
 		}
 
-		&:not(.is-opened) {
+		&:not(.is-opened, .is-active) {
 			&:hover {
 				border-color: $orange;
 				color: $orange;
 				stroke: $orange;
 			}
+		}
+
+		&.is-active {
+			border-color: #fff;
 		}
 
 		&.is-opened {

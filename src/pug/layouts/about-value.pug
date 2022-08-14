@@ -1,0 +1,37 @@
+-
+	var aboutValueData = {
+		title: 'Наша высшая ценность — это удовлетворение всех пожеланий заказчика по доставке в любую точку РФ. ',
+
+		features: [
+			{
+				header: '6 200',
+				subheader: 'автомобилей в управлении',
+			},
+			{
+				header: '5 560',
+				subheader: 'тонн ежедневных перевозок',
+			},
+		],
+
+		background: {
+			mobile: `${imgPath}about-value-mobile.jpg`,
+			default: `${imgPath}about-value.jpg`,
+		},
+	};
+
++b.SECTION.about-value
+	+e.wrap.wrap.flex._vertical._justify
+		+e.H2.title.h1.js-reveal-slideRight #{ aboutValueData.title }
+		+e.features
+			each item in aboutValueData.features
+				+e.feature.js-reveal-slideLeft
+					+e.feature-header #{ item.header }
+					+e.feature-subheader #{ item.subheader }
+		+e.PICTURE.photo.js-reveal-fadeIn.js-reveal-viewFactor
+			source(
+				srcset=aboutValueData.background.mobile
+				media='(max-width: 580px)')
+			img.object-fit(
+				src=aboutValueData.background.default
+				alt='about-value-photo'
+				loading='lazy')

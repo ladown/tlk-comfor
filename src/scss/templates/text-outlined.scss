@@ -1,0 +1,11 @@
+.text-outlined {
+	position: absolute;
+	fill: transparent;
+	stroke: #fff;
+
+	svg {
+		width: 100%;
+		height: auto;
+		max-width: unset;
+	}
+}

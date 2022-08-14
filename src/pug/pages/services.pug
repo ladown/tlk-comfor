@@ -1,0 +1,81 @@
+extends ../layouts/layout.pug
+
+block append vars
+	- title = 'Услуги';
+	- activeHeaderLink = 1;
+
+block content
+	-
+		var servicesAdditionalData = {
+			mods: ['services'],
+
+			items: [
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-1.png`,
+					caption: 'Крановые работы',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-2.png`,
+					caption: 'Погрузо-разгрузочные работы',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-3.png`,
+					caption: 'Такелажные работы',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-4.png`,
+					caption: 'Курьерские услуги',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-5.png`,
+					caption: 'Крепление груза',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-6.png`,
+					caption: 'Упаковка груза',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-7.png`,
+					caption: 'Консолидация груза',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-8.png`,
+					caption: 'Сортировка',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-9.png`,
+					caption: 'Маркировка',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-10.png`,
+					caption: 'Получение/доставка от/до склада грузоотправителя',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-11.png`,
+					caption: 'Возврат  оригиналов документов ',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-12.png`,
+					caption: 'Внутритарный учет',
+				},
+			],
+		};
+
+	+common-header 
+		| Услуги
+	include ../layouts/services-types
+	include ../layouts/transportation
+	+services-additional(servicesAdditionalData)
+	include ../layouts/lead

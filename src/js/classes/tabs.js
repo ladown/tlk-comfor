@@ -25,8 +25,6 @@ class Tabs {
 
 	toggleVisibility(index = 0) {
 		if (this.isOwnAnimation) {
-			// const halfItemsCounter = Math.ceil(this.tabsContent.length / 2);
-
 			this.tabsParent.classList.add(this.mods.locked);
 			this.tabs[this.activeTab].classList.remove(this.mods.active);
 			this.tabsContent[this.activeTab].classList.add(this.mods.out);
@@ -48,9 +46,9 @@ class Tabs {
 			this.tabs[this.activeTab].classList.remove(this.mods.active);
 			this.isSlider && $(this.sliderButtons[this.activeTab]).fadeOut(200, 'linear');
 			$(this.tabsContent[this.activeTab]).fadeOut(300, 'linear', () => {
-				$(this.tabsContent[index]).css('display', 'flex').hide().fadeIn();
+				$(this.tabsContent[index]).css('display', 'flex').hide().fadeIn(300, 'linear');
 				this.tabs[index].classList.add(this.mods.active);
-				this.isSlider && $(this.sliderButtons[this.activeTab]).css('display', 'flex').hide().fadeIn();
+				this.isSlider && $(this.sliderButtons[this.activeTab]).css('display', 'flex').hide().fadeIn(300, 'linear');
 				this.tabsParent.classList.remove(this.mods.locked);
 			});
 

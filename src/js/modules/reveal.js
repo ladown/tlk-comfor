@@ -1,6 +1,6 @@
 'use strict';
 
-import ScrollReveal, { reveal } from 'scrollreveal';
+import ScrollReveal from 'scrollreveal';
 import { gsap } from 'gsap';
 
 export default () => {
@@ -78,7 +78,34 @@ export default () => {
 		delay: 150,
 	});
 
+	Reveal.reveal('.js-reveal-slideLeft', {
+		distance: '50%',
+		origin: 'rigth',
+		opacity: 0,
+		duration: 300,
+		delay: 150,
+	});
+
+	Reveal.reveal('.js-reveal-slideRight', {
+		distance: '50%',
+		origin: 'left',
+		opacity: 0,
+		duration: 300,
+		delay: 150,
+	});
+
+	Reveal.reveal('.js-reveal-scale', {
+		scale: 0.5,
+		opacity: 0,
+		duration: 600,
+		delay: 150,
+	});
+
 	Reveal.reveal('.js-reveal-interval', {
-		interval: 150,
+		interval: 200,
+	});
+
+	Reveal.reveal('.js-reveal-viewFactor', {
+		viewFactor: 0,
 	});
 };

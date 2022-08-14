@@ -1,5 +1,5 @@
 -
-	var additionServicesData = {
+	var mainServicesData = {
 		title: 'Дополнительные услуги компании',
 
 		subtitle: 'Кроме собственно доставки вашего груза, мы также готовы предложить дополнительные услуги',
@@ -19,11 +19,11 @@
 		],
 	};
 
-+b.SECTION.additional-services
++b.SECTION.main-services
 	+e.wrap.wrap.flex._justify._start
 		+e.cell._description
-			+e.H2.title.h2.js-reveal-slideUp #{ additionServicesData.title }
-			+e.subtitle.js-reveal-slideUp #{ additionServicesData.subtitle }
+			+e.H2.title.h2.js-reveal-slideUp #{ mainServicesData.title }
+			+e.subtitle.js-reveal-slideUp #{ mainServicesData.subtitle }
 		+e.cell._items.flex._vertical._row._wrap
-			each item in additionServicesData.items
-				+e.item.js-reveal-fadeIn #{ item }
+			each item in mainServicesData.items
+				+e.A.item.js-reveal-fadeIn(href='/services.html') #{ item }

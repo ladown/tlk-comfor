@@ -1,0 +1,15 @@
+mixin circle-progress(data = {})
+	+e.circle-progress.circle-progress__.js-circle-progress&attributes(attributes)
+		+e.background
+			+e.SVG.border(viewBox='0 0 60 60')
+				+e.CIRCLE.border-back(
+					cx='30'
+					cy='30'
+					r='28')
+				+e.CIRCLE.border-bar.js-circle-progress-bar(
+					cx='30'
+					cy='30'
+					r='28')
+			+e.text.js-circle-progress-text
+				if block
+					block
