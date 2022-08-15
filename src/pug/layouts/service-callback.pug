@@ -1,56 +1,6 @@
 -
-	var callbackPopupData = {
-		mode: '_callback',
-		jsClass: 'js-popup-callback',
-
-		title: 'Заказать звонок',
-
-		subtitle: 'Обращаем ваше внимание, мы работаем с юридическими лицами. В ближайшее время наши менеджеры свяжутся c вами.',
-
-		fields: [
-			{
-				mode: '_name',
-				label: 'Ваше имя',
-				type: 'text',
-				name: 'name',
-				placeholder: 'Представьтесь',
-			},
-			{
-				mode: '_tel',
-				label: 'Телефон',
-				type: 'tel',
-				inputmode: 'tel',
-				name: 'tel',
-				placeholder: 'Укажите номер телефона',
-			},
-			{
-				mode: '_email',
-				label: 'E-mail',
-				type: 'email',
-				inputmode: 'email',
-				name: 'email',
-				placeholder: 'Укажите email',
-			},
-			{
-				mode: '_textarea',
-				label: 'Сообщение',
-				name: 'message',
-				placeholder: 'Введите сообщение',
-				isTextarea: true,
-			},
-		],
-
-
-		isChangingTelephone: true,
-	};
-
-	var servicePopupData = {
-		mode: '_service',
-		jsClass: 'js-popup-service',
-
-		title: 'Заказать звонок',
-
-		subtitle: 'Обращаем ваше внимание, мы работаем с юридическими лицами. В ближайшее время наши менеджеры свяжутся c вами.',
+	var serviceCallbackData = {
+		title: 'Оставьте заявку',
 
 		fields: [
 			{
@@ -111,9 +61,30 @@
 				isTextarea: true,
 			},
 		],
+
+		button: {
+			icon: {
+				name: 'arrowRight',
+				viewBox: '0 0 12 12',
+			},
+		},
 	};
 
-
-.popups(style='position: absolute')
-	+popup(callbackPopupData)
-	+popup(servicePopupData)
++b.SECTION.service-callback
+	+e.wrap.wrap
+		+e.H2.title.h3.text-center.js-reveal-fadeIn #{ serviceCallbackData.title }
+		+e.FORM.form.js-form(action='#')
+			+e.fields.flex._row._wrap
+				each item, index in serviceCallbackData.fields
+					if item.isSelect
+						+select(item).js-reveal-slideUp
+					else
+						+field(item).js-reveal-slideUp
+			+e.form-footer.flex._start._justify
+				+e.policy.js-reveal-fadeIn
+					| Нажимая кнопку «Отправить» вы принимаете условия&nbsp;
+					a(href='#') Политики конфиденциальности&nbsp;
+					| и&nbsp;
+					a(href='#') Обработки персональных данных
+				+button(serviceCallbackData.button).js-reveal-fadeIn
+					| Заказать

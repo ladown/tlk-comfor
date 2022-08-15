@@ -143,9 +143,7 @@
 	+e.wrap.wrap
 		+e.H2.title.h3.js-reveal-fadeIn #{ mainNewsData.title }
 		+e.header.flex._vertical._justify
-			+e.tabs.js-tabs-parent.js-reveal-fadeIn
-				each item, index in mainNewsData.tabs
-					+e.BUTTON.tab.js-tabs-button(class=index === 0 && 'is-active') #{ item }
+			+tabs(mainNewsData.tabs).js-reveal-fadeIn
 			+e.slider-buttons-wrap.js-reveal-fadeIn
 				while i < 3
 					+slider-buttons(class=i === 0 && 'is-active')
@@ -156,15 +154,15 @@
 					+e.slider.swiper.js-slider-main-news
 						.swiper-wrapper
 							each item in slider 
-								+e.A.slide.swiper-slide(href='#')
+								+e.A.slide.swiper-slide(href='/article.html')
 									+e.slide-text #{ item.text }
 									+e.slide-footer.flex._vertical._justify
 										+e.slide-day #{ item.date.day }
 										+e.slide-dates.text-right
 											+e.slide-month #{ item.date.month }
 											+e.slide-year #{ item.date.year }
-									+e.slide-background.flex._end._right._column
-										img.unreached(
+									+e.slide-background.flex._end._right._column.unreached
+										img(
 											src=`${imgPath}common/logo_transparent.svg`
 											alt='logo'
 											loading='lazy')

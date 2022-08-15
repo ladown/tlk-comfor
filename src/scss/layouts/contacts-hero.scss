@@ -1,0 +1,292 @@
+.contacts-hero {
+	width: 100%;
+	max-width: 1920rem;
+	margin: 0 auto;
+	position: relative;
+	padding: 24rem 0 150rem;
+	overflow: hidden;
+
+	@include to(980px) {
+		padding-top: 40rem;
+	}
+
+	@include to(768px) {
+		padding-bottom: 0;
+	}
+
+	@include to(580px) {
+		padding-top: 20rem;
+	}
+
+	&__wrap {
+		position: relative;
+
+		@include from(769px) {
+			padding-bottom: 460rem;
+		}
+
+		@include from(980px) {
+			z-index: 1;
+
+			&::before {
+				content: '';
+				width: 1920rem;
+				height: 714rem;
+				position: absolute;
+				top: -24rem;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: #f8f9f9;
+				pointer-events: none;
+				z-index: -1;
+			}
+		}
+	}
+
+	.breadcrumbs {
+		padding-top: 0;
+		margin-bottom: 80rem;
+
+		@include to(980px) {
+			margin-bottom: 55rem;
+		}
+
+		@include to(580px) {
+			margin-bottom: 30rem;
+		}
+
+		.wrap {
+			padding: 0;
+		}
+	}
+
+	&__info {
+		width: 100%;
+		max-width: 500rem;
+
+		@include to(980px) {
+			max-width: 47%;
+		}
+
+		@include to(768px) {
+			max-width: 100%;
+		}
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 24rem;
+		}
+
+		&-icon {
+			flex: 0 0 auto;
+			margin-right: 20rem;
+			width: 40rem;
+			height: 40rem;
+			fill: #27869a;
+
+			@include to(580px) {
+				width: 32rem;
+				height: 32rem;
+				margin-right: 17rem;
+			}
+		}
+
+		&-content {
+			flex: 1;
+		}
+
+		&-label {
+			font: 400px;
+			font-size: 15rem;
+			line-height: div(17, 15);
+			color: rgba(20, 45, 59, 0.4);
+
+			@include to(580px) {
+				font-size: 14rem;
+			}
+		}
+
+		&-text {
+			display: inline-flex;
+			margin-top: 8rem;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 22rem;
+			line-height: 1.2;
+			color: #142d3b;
+
+			@include to(580px) {
+				margin-top: 5rem;
+				font-size: 20rem;
+			}
+
+			&[href] {
+				transition: color 0.3s linear;
+
+				&:hover {
+					color: $orange;
+				}
+			}
+		}
+
+		&-links {
+			margin-top: 16rem;
+
+			@include to(580px) {
+				margin-top: 6rem;
+			}
+		}
+
+		&-link {
+			position: relative;
+			font-size: 17rem;
+			line-height: 1.4;
+			color: rgba(20, 45, 59, 0.7);
+			transition: color 0.3s linear;
+
+			@include to(580px) {
+				font-size: 14rem;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: 1px;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background-color: #cfdbe3;
+				transition: background-color 0.3s linear;
+			}
+
+			&:hover {
+				color: $orange;
+
+				&::before {
+					background-color: $orange;
+				}
+			}
+
+			&:not(:last-child) {
+				margin-right: 16rem;
+
+				@include to(580px) {
+					margin-right: 18rem;
+				}
+			}
+		}
+	}
+
+	&__download {
+		margin: 32rem 0 0 60rem;
+		position: relative;
+		font-size: 17rem;
+		line-height: 1.4;
+		color: rgba(20, 45, 59, 0.7);
+		transition: color 0.3s linear;
+
+		@include to(580px) {
+			margin: 8rem 0 0 49rem;
+			font-size: 14rem;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 1px;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: #cfdbe3;
+			transition: background-color 0.3s linear;
+		}
+
+		&:hover {
+			color: $orange;
+
+			&::before {
+				background-color: $orange;
+			}
+		}
+	}
+
+	&__photo {
+		@include from(769px) {
+			position: absolute;
+			width: 76%;
+			top: -40rem;
+			right: -285rem;
+		}
+
+		@include from(981px) {
+			top: -24rem;
+			width: 946rem;
+			right: -235rem;
+		}
+
+		@include to(768px) {
+			position: relative;
+			margin: 50rem calc(-1 * var(--wrapper-offset)) 0;
+			width: calc(100% + (2 * var(--wrapper-offset)));
+		}
+
+		@include to(580px) {
+			margin-top: 35rem;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			padding-top: calc(div(714, 946) * 100%);
+
+			@include to(768px) {
+				padding-top: 40%;
+			}
+
+			@include to(580px) {
+				padding-top: calc(div(190, 414) * 100%);
+			}
+		}
+	}
+
+	&__map {
+		@include from(769px) {
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			max-width: 1642rem;
+			height: 540rem;
+			bottom: 0;
+			right: 0;
+		}
+
+		@include to(768px) {
+			position: relative;
+
+			&::before {
+				content: '';
+				display: block;
+				padding-top: 40%;
+			}
+		}
+
+		@include to(580px) {
+			height: 475rem;
+
+			&::before {
+				padding-top: 0;
+			}
+		}
+
+		@include to(440px) {
+			&::before {
+				padding-top: calc(div(475, 414) * 100%);
+			}
+		}
+
+		iframe {
+			border: none;
+		}
+	}
+}

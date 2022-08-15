@@ -1,0 +1,147 @@
+.service-algoritm {
+	margin-top: 80rem;
+
+	@include to(980px) {
+		margin-top: 55rem;
+	}
+
+	@include to(580px) {
+		margin-top: 30rem;
+	}
+
+	&__wrap {
+		padding-top: 60rem;
+		padding-bottom: 120rem;
+		position: relative;
+
+		@include to(980px) {
+			padding-top: 45rem;
+			padding-bottom: 55rem;
+		}
+
+		@include to(768px) {
+			flex-wrap: wrap;
+		}
+
+		@include to(580px) {
+			padding-top: 30rem;
+			padding-bottom: 30rem;
+		}
+	}
+
+	&__cell {
+		position: relative;
+		z-index: 2;
+		color: #fff;
+		flex-shrink: 1;
+		flex-basis: auto;
+		width: 490rem;
+
+		@include to(768px) {
+			flex-basis: 100%;
+		}
+
+		&_description {
+			margin-right: 145rem;
+
+			@include to(980px) {
+				width: 380rem;
+			}
+
+			@include to(768px) {
+				margin: 0 0 36rem 0;
+			}
+
+			@include to(580px) {
+				margin-bottom: 26rem;
+			}
+		}
+
+		&_items {
+		}
+	}
+
+	&__subtitle {
+		margin-top: 40rem;
+		width: 100%;
+		max-width: 280rem;
+		font-size: 17rem;
+		line-height: 1.4;
+
+		@include to(980px) {
+			margin-top: 30rem;
+		}
+
+		@include to(580px) {
+			margin-top: 15rem;
+			font-size: 16rem;
+		}
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 40rem;
+
+			@include to(580px) {
+				margin-bottom: 25rem;
+			}
+		}
+
+		&-count {
+			flex: 0 0 auto;
+			margin-right: 24rem;
+			align-self: flex-start;
+			transform: translateY(-8rem);
+			font-weight: 500;
+			font-size: 40rem;
+			line-height: 1.35;
+			color: #ff6f3c;
+
+			@include to(580px) {
+				transform: translateY(-4rem);
+				font-size: 25rem;
+				margin-right: 16rem;
+			}
+		}
+
+		&-text {
+			font-size: 17rem;
+			line-height: 1.4;
+
+			br {
+				@include to(768px) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__circle-progress {
+		flex: 0 0 auto;
+		width: 120rem;
+		height: 120rem;
+		margin-right: 40rem;
+
+		@include to(580px) {
+			margin-right: 26rem;
+			width: 76rem;
+			height: 76rem;
+		}
+	}
+
+	&__background {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		@include from(1441px) {
+			width: 1685rem;
+			height: 772.72rem;
+		}
+
+		@include to(1440px) {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

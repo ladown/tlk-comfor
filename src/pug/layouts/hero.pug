@@ -62,14 +62,14 @@
 				+icon('directionToggle', '0 0 24 36').small-tablet-hidden
 				+icon('directionToggleMobile', '0 0 36 24').min-small-tablet-hidden
 			+select(heroData.fields[1])
-			+button
+			+button.js-popup-service-trigger
 				| Рассчитать стоимость
 		+e.text.js-reveal-fadeIn #{ heroData.text }
-	+e.PICTURE.background 
+	+e.PICTURE.background.unreached
 		source(
 			srcset=heroData.background.mobile
 			media='(max-width: 580px)')
-		+e.IMG.background-photo.object-fit.unreached(
+		+e.IMG.background-photo.object-fit(
 			src=heroData.background.default
 			alt='promo-background'
 			loading='lazy')

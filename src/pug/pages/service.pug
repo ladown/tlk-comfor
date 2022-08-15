@@ -4,8 +4,40 @@ block append vars
 	- title = 'Мультимодальные перевозки';
 
 block content
+	-
+		var servicesAdditionalData = {
+			mods: ['service'],
+
+			hasTitle: true,
+
+			items: [
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-1.png`,
+					caption: 'Крановые работы',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-2.png`,
+					caption: 'Погрузо-разгрузочные работы',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-3.png`,
+					caption: 'Такелажные работы',
+				},
+				{
+					href: '/services-inner.html',
+					photo: `${imgPath}additional-service-4.png`,
+					caption: 'Курьерские услуги',
+				},
+			],
+		};
 	include ../layouts/service-hero
 	include ../layouts/service-info
 	include ../layouts/service-features
 	include ../layouts/service-calculation
+	+services-additional(servicesAdditionalData)
+	include ../layouts/service-algoritm
+	include ../layouts/service-callback
 	include ../layouts/lead

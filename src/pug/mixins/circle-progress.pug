@@ -10,6 +10,12 @@ mixin circle-progress(data = {})
 					cx='30'
 					cy='30'
 					r='28')
-			+e.text.js-circle-progress-text
-				if block
+			if data.icon
+				+e.icon
+					img.object-fit(
+						src=data.icon
+						alt='circle-progress-item'
+						loading='lazy')
+			if block
+				+e.text.js-circle-progress-text
 					block

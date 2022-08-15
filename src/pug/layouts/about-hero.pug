@@ -16,11 +16,11 @@
 		+e.subtitle.flex._justify
 			+e.text.js-reveal-slideUp.js-reveal-interval #{ aboutHeroData.text }
 			+round-arrow.js-reveal-slideUp.js-reveal-interval
-	+e.PICTURE.background
+	+e.PICTURE.background.unreached
 		source(
 			srcset=aboutHeroData.background.mobile
 			media='(max-width: 580px)')
-		img.object-fit.unreached(
+		img.object-fit(
 			src=aboutHeroData.background.default
 			alt='about-hero-background'
 			loading='lazy')

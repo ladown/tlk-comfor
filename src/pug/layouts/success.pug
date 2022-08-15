@@ -26,14 +26,14 @@
 		+e.subtitle #{ successData.subtitle }
 		+button(successData.button) 
 			| На главную
-		+e.background._desktop.mobile-hidden
+		+e.background._desktop.unreached.mobile-hidden
 			each item, index in successData.backgroundDesktop
 				+e.IMG.background-photo(
 					class=`_${index + 1}`
 					src=item
 					alt='success-background'
 					loading='lazy')
-		+e.IMG.background._mobile.from-mobile-hidden(
+		+e.IMG.background._mobile.unreached.from-mobile-hidden(
 			src=successData.backgroundMobile
 			alt='success-background'
 			loading='lazy')

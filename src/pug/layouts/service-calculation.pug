@@ -74,7 +74,7 @@
 +b.SECTION.servic-calculation
 	+e.wrap.wrap
 		+e.H2.title.h2.js-reveal-fadeIn #{ serviceCalculationData.title }
-		+e.FORM.form(action='#')
+		+e.form
 			+e.fields
 				each row in serviceCalculationData.fields
 					+e.fields-row.flex._vertical.js-reveal-slideUp
@@ -86,10 +86,11 @@
 										+icon('directionToggle', '0 0 24 36').small-tablet-hidden
 										+icon('directionToggleMobile', '0 0 36 24').min-small-tablet-hidden
 							else if item.isButton
-								+button
+								+button.js-popup-service-trigger
 									| Отправить запрос
 							else
 								+field(item)
 		+e.IMG.photo.unreached.js-reveal-slideLeft.js-reveal-viewFactor(
 			src=serviceCalculationData.photo
-			alt='serice-calculation-photo')
+			alt='serice-calculation-photo'
+			loading='lazy')

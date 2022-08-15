@@ -17,6 +17,7 @@
 
 	&__wrap {
 		position: relative;
+		z-index: 1;
 	}
 
 	&__title {
@@ -52,6 +53,11 @@
 				@include to(580px) {
 					margin-bottom: 24rem;
 				}
+			}
+
+			&:first-child {
+				position: relative;
+				z-index: 1;
 			}
 		}
 
@@ -107,7 +113,7 @@
 					max-height: 220rem;
 
 					@include to(980px) {
-						max-height: 180deg;
+						max-height: 180rem;
 					}
 				}
 			}
@@ -145,8 +151,6 @@
 	}
 
 	&__button {
-		z-index: 1;
-
 		@include from(769px) {
 			margin-left: 52rem;
 		}
@@ -167,6 +171,7 @@
 		top: -80rem;
 		width: 616rem;
 		height: 434rem;
+		z-index: -1;
 
 		@include to(980px) {
 			top: auto;

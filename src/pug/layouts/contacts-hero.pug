@@ -1,0 +1,93 @@
+-
+	var contactsHeroData = {
+		breadcrumbs: [
+			{
+				href: '/main.html',
+				text: 'Главная',
+			},
+			{
+				text: 'Контакты'
+			},
+		],
+
+		items: [
+			{
+				icon: 'phone2',
+				label: 'Телефон',
+				linkHref: 'tel:+74953766110',
+				text: '+7 (495) 376-61-10',
+			},
+			{
+				icon: 'message',
+				label: 'Телефон и мессенджеры',
+				linkHref: 'tel:+79093766110',
+				text: '+7 (909) 376-61-10',
+				sublinks: [
+					{
+						href: '#',
+						text: 'Whatsapp',
+					},
+					{
+						href: '#',
+						text: 'Telegram',
+					},
+					{
+						href: '#',
+						text: 'Viber',
+					},
+				],
+			},
+			{
+				icon: 'location',
+				label: 'Адрес',
+				text: '117321 Москва, ул. Старокочаловская, 15',
+				isAddress: true,
+			},
+			{
+				icon: 'time',
+				label: 'Часы работы',
+				text: 'пн-пт 09:00 — 18:00 ',
+			},
+			{
+				icon: 'sms',
+				label: 'E-mail',
+				linkHref: 'mailto:info@tlkkomfort.ru',
+				text: 'info@tlkkomfort.ru',
+			},
+		],
+
+		photo: `${imgPath}contacts.jpg`
+	};
+
++b.SECTION.contacts-hero
+	+e.wrap.wrap
+		+e.info
+			+breadcrumbs(contactsHeroData.breadcrumbs).js-reveal-fadeIn
+			each item in contactsHeroData.items
+				+e.item.flex._start.js-reveal-slideUp.js-reveal-interval
+					+e.item-icon
+						+icon(item.icon, '0 0 40 40')
+					+e.item-content
+						+e.H5.item-label #{ item.label }
+						if item.linkHref
+							+e.A.item-text(href=item.linkHref) #{ item.text }
+						else if item.isAddress
+							+e.ADDRESS.item-text #{ item.text }
+						else
+							+e.item-text #{ item.text }
+						if item.sublinks
+							+e.item-links.flex._vertical
+								each link in item.sublinks
+									+e.A.item-link(href=link.href) #{ link.text }
+			+e.A.download.js-reveal-fadeIn(
+				href='#'
+				download) Скачать реквизиты
+
+		+e.photo.js-reveal-slideLeft.js-reveal-viewFactor
+			img.object-fit(
+				src=contactsHeroData.photo
+				alt='contacts-photo'
+				loading='lazy')
+	+e.map.js-reveal-slideUp.js-reveal-viewFactor
+		iframe.object-fit(
+			src='https://yandex.ru/map-widget/v1/?um=constructor%3Ae9e67049314858f180448ead8d1f8fc343858214b7a7ef432ec6482b0a045bbe&amp;source=constructor')

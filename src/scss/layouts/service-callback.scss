@@ -1,0 +1,152 @@
+.service-callback {
+	padding-top: 80rem;
+
+	@include to(980px) {
+		padding-top: 55rem;
+	}
+
+	@include to(580px) {
+		padding-top: 30rem;
+	}
+
+	&__title {
+		color: $dark;
+	}
+
+	&__form {
+		margin-top: 68rem;
+
+		@include to(980px) {
+			margin-top: 41rem;
+		}
+
+		@include to(580px) {
+			margin-top: 21rem;
+		}
+
+		&-footer {
+			margin-top: 40rem;
+
+			@include to(980px) {
+				margin-top: 30rem;
+			}
+
+			@include to(580px) {
+				margin-top: 20rem;
+				flex-wrap: wrap;
+			}
+		}
+	}
+
+	&__fields {
+		@include items(2, 14);
+
+		@include to(580px) {
+			@include items(1, 12);
+		}
+	}
+
+	&__field {
+		&.field {
+			@include from(581px) {
+				&_organization-name {
+					@include item-self(1, 14, false);
+				}
+
+				&_textarea {
+					@include item-self(1, 14, false);
+				}
+			}
+		}
+	}
+
+	&__select {
+		.select {
+			&__options-outer {
+				max-height: 270rem;
+
+				@include to(580px) {
+					max-height: 210rem;
+				}
+			}
+
+			&__head {
+				padding: 16rem 20rem;
+
+				@include to(580px) {
+					padding: 12rem 19rem;
+				}
+
+				&-value {
+					font-size: 20rem;
+					line-height: div(23, 20);
+
+					@include from-to(581px, 1120px) {
+						font-size: 23rem;
+					}
+
+					@include to(580px) {
+						font-size: 18rem;
+						line-height: div(21, 18);
+					}
+				}
+			}
+		}
+	}
+
+	&__policy {
+		flex-shrink: 1;
+		flex-grow: 0;
+		font-size: 15rem;
+		line-height: 1.4;
+		color: rgba(20, 45, 59, 0.4);
+
+		@include to(580px) {
+			flex-basis: 100%;
+			order: 2;
+			font-size: 12rem;
+		}
+
+		@include from(581px) {
+			flex-basis: 512rem;
+		}
+
+		a {
+			text-decoration-line: underline;
+			color: rgba(20, 45, 59, 0.7);
+			transition: color 0.3s linear;
+
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
+
+	&__button {
+		flex: 0 0 230rem;
+		margin-left: 20rem;
+		padding: 26rem 32rem;
+
+		@include to(580px) {
+			padding: 18rem 33rem 16rem;
+			flex-basis: 100%;
+			margin: 0 0 10rem 0;
+		}
+
+		.button {
+			&__icon {
+				margin-right: 75rem;
+
+				@include to(580px) {
+					margin-right: 20rem;
+				}
+			}
+
+			&__text {
+				@include to(580px) {
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}

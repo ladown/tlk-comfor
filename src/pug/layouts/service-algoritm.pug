@@ -1,0 +1,50 @@
+-
+	var serviceAlgoritmData = {
+		title: 'Простой и понятный алгоритм заказа от запроса до заявки',
+
+		subtitle: 'Четыре простых шага к надежному сотрудничеству',
+
+		items: [
+			{
+				icon: `${imgPath}service-algoritm-1.png`,
+				text: 'Отправляете <br/>запрос менеджеру',
+			},
+			{
+				icon: `${imgPath}service-algoritm-2.png`,
+				text: 'Уточняем детали и считаем точную стоимость услуги',
+			},
+			{
+				icon: `${imgPath}service-algoritm-3.png`,
+				text: 'Подписываем <br/>договор',
+			},
+			{
+				icon: `${imgPath}service-algoritm-4.png`,
+				text: 'Приступаем </br>к выполнению заказа',
+			},
+		],
+
+		background: {
+			mobile: `${imgPath}background/services-hero-bg-mobile.jpg`,
+			default: `${imgPath}background/services-hero-bg.jpg`,
+		},
+	};
+
++b.SECTION.service-algoritm
+	+e.wrap.wrap.flex
+		+e.cell._description
+			+e.H2.title.h2.js-reveal-fadeIn #{ serviceAlgoritmData.title }
+			+e.subtitle.js-reveal-fadeIn #{ serviceAlgoritmData.subtitle }
+		+e.cell._items
+			each item, index in serviceAlgoritmData.items
+				+e.item.flex._vertical.js-reveal-slideUp.js-reveal-interval
+					+e.item-count 0#{ index + 1 }
+					+circle-progress({icon: item.icon})
+					+e.item-text !{ item.text }
+		+e.PICTURE.background.unreached
+			picture(
+				srcset=serviceAlgoritmData.background.mobile
+				media='(max-width: 580px)')
+			img.object-fit(
+				src=serviceAlgoritmData.background.default
+				alt='service-algoritm-photo'
+				loading='lazy')

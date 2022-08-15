@@ -2,6 +2,10 @@ extends ../layouts/layout.pug
 
 block append vars
 	- title = 'Контакты';
-	- activeHeaderLink = 4;
+	- activeHeaderLink = 3;
 
 block content
+	+common-header
+		| Контакты
+	include ../layouts/contacts-hero
+	include ../layouts/callback

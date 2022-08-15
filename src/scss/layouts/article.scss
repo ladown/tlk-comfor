@@ -1,0 +1,185 @@
+.article {
+	padding: 260rem 0 160rem;
+
+	@include to(980px) {
+		padding: 190rem 0 60rem;
+	}
+
+	@include to(580px) {
+		padding: 120rem 0 40rem;
+	}
+
+	&__back {
+		font-size: 17rem;
+		line-height: 1.4;
+		transition: color 0.3s linear;
+
+		@include to(980px) {
+			font-size: 16rem;
+		}
+
+		.round-arrow {
+			flex: 0 0 auto;
+			width: 32rem;
+			height: 32rem;
+			background-color: $dark;
+			stroke: #fff;
+			margin-right: 24rem;
+			transition: background-color 0.3s linear;
+
+			@include to(580px) {
+				width: 30rem;
+				height: 30rem;
+				margin-right: 18rem;
+			}
+
+			svg {
+				width: 18rem;
+				height: 18rem;
+				transform: rotate(90deg);
+			}
+		}
+
+		&:hover {
+			color: $orange;
+
+			.round-arrow {
+				background-color: $orange;
+			}
+		}
+	}
+
+	&__body {
+		margin-top: 24rem;
+		padding-top: 60rem;
+		border-top: 1px solid #cfdbe3;
+
+		@include to(980px) {
+			flex-wrap: wrap;
+			padding-top: 40rem;
+		}
+
+		@include to(580px) {
+			padding-top: 25rem;
+			margin-top: 18rem;
+		}
+	}
+
+	&__cell {
+		flex-shrink: 1;
+		flex-basis: auto;
+
+		@include to(980px) {
+			flex-basis: 100%;
+		}
+
+		&_info {
+			width: 612rem;
+
+			@include from(981px) {
+				margin-right: 84rem;
+			}
+
+			@include to(980px) {
+				margin-bottom: 40rem;
+			}
+
+			@include to(580px) {
+				margin-bottom: 20rem;
+			}
+		}
+
+		&_content {
+			flex-grow: 1;
+			width: 668rem;
+		}
+	}
+
+	&__title {
+		position: relative;
+		padding-bottom: 60rem;
+
+		@include to(980px) {
+			padding-bottom: 40rem;
+		}
+
+		@include to(580px) {
+			padding-bottom: 25rem;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: calc(100% - 60rem);
+			height: 1px;
+			background-color: #cfdbe3;
+
+			@include to(980px) {
+				width: 100%;
+			}
+		}
+	}
+
+	&__date {
+		margin-top: 40rem;
+
+		@include to(980px) {
+			margin-top: 30rem;
+		}
+
+		@include to(580px) {
+			margin-top: 16rem;
+		}
+
+		&-day {
+			font-weight: 500;
+			font-size: 100rem;
+			line-height: 1.2;
+			color: #ff6f3c;
+			margin-right: 26rem;
+
+			@include to(580px) {
+				font-size: 80rem;
+				margin-right: 30rem;
+			}
+		}
+
+		&-other {
+			font-size: 14rem;
+			line-height: div(16, 14);
+			color: #4d627b;
+
+			span {
+				&:not(:last-child) {
+					margin-bottom: 4rem;
+				}
+			}
+		}
+	}
+
+	&__content {
+		color: rgba(0, 30, 66, 0.7);
+
+		*:not(:last-child) {
+			margin-top: 30rem;
+			margin-bottom: 30rem;
+
+			@include to(580px) {
+				margin-top: 20rem;
+				margin-bottom: 20rem;
+			}
+		}
+
+		*:first-child {
+			margin-top: 0;
+		}
+
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}

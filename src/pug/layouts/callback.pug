@@ -1,0 +1,69 @@
+-
+	var callbackData = {
+		title: 'Связаться с нами',
+
+		fields: [
+			{
+				mode: '_name',
+				label: 'Ваше имя',
+				type: 'text',
+				name: 'name',
+				placeholder: 'Представьтесь',
+			},
+			{
+				mode: '_tel',
+				label: 'Телефон',
+				type: 'tel',
+				inputmode: 'tel',
+				name: 'tel',
+				placeholder: 'Укажите номер телефона',
+			},
+			{
+				mode: '_email',
+				label: 'E-mail',
+				type: 'email',
+				inputmode: 'email',
+				name: 'email',
+				placeholder: 'Укажите email',
+			},
+			{
+				mode: '_textarea',
+				label: 'Сообщение',
+				name: 'message',
+				placeholder: 'Введите сообщение',
+				isTextarea: true,
+			},
+		],
+
+		isChangingTelephone: true,
+
+		button: {
+			icon: {
+				name: 'arrowRight',
+				viewBox: '0 0 12 12',
+			},
+		},
+	};
+
++b.SECTION.callback
+	+e.wrap.wrap.flex._start._justify
+		+e.cell._info
+			+e.H2.title.h3.js-reveal-fadeIn #{ callbackData.title }
+		+e.cell._form
+			+e.FORM.form.js-form(action='#')
+				+e.fields.flex._row._wrap
+					each item, index in callbackData.fields
+						if item.type === 'email' && callbackData.isChangingTelephone
+							+field(item).is-hidden
+						else
+							+field(item).js-reveal-slideUp.js-reveal-interval
+						if index === 2 && callbackData.isChangingTelephone
+							+changing-button.js-reveal-slideUp.js-reveal-interval
+				+e.form-footer.flex._start._justify
+					+e.policy.js-reveal-fadeIn
+						| Нажимая кнопку «Отправить» вы принимаете условия&nbsp;
+						a(href='#') Политики конфиденциальности&nbsp;
+						| и&nbsp;
+						a(href='#') Обработки персональных данных
+					+button(callbackData.button).js-reveal-fadeIn
+						| Отправить
