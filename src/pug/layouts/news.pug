@@ -186,7 +186,7 @@
 	+e.wrap.wrap
 		+breadcrumbs(newsData.breadcrumbs).js-reveal-fadeIn
 		+tabs(newsData.tabs).js-reveal-fadeIn
-		+e.content.js-reveal-slideUp.js-reveal-viewFactor
+		+e.content
 			each content, index in newsData.content
 				+e.items.js-tabs-content(class=index === 0 && 'is-active')
 					each item, index in content 
@@ -196,8 +196,7 @@
 									+e.header-photo
 										img.object-fit(
 											src=newsData.banner.photo
-											alt='news-header-photo'
-											loading='lazy')
+											alt='news-header-photo')
 								+e.header-cell._description.flex._column._justify
 									+e.H2.header-title.h2 #{ newsData.banner.title }
 									+e.header-subtitle #{ newsData.banner.subtitle }

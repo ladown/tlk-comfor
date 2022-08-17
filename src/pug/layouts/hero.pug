@@ -49,13 +49,13 @@
 		text: 'Наша главная цель — долгосрочное, взаимовыгодное сотрудничество с каждым клиентом.',
 	};
 
-+b.SECTION.hero
++b.SECTION.hero.js-custom-reveal
 	+e.wrap.wrap
 		+e.label.flex._vertical.js-reveal-fadeIn
 			+e.label-icon
 				+icon('union', '0 0 15 16')
 			+e.label-text #{ heroData.label }
-		+e.H1.title.h1.js-reveal-slideUp #{ heroData.title }
+		+e.H1.title.h1.js-custom-reveal-item #{ heroData.title }
 		+e.box.flex._vertical.js-reveal-fadeIn
 			+select(heroData.fields[0])
 			+e.box-icon
@@ -71,5 +71,4 @@
 			media='(max-width: 580px)')
 		+e.IMG.background-photo.object-fit(
 			src=heroData.background.default
-			alt='promo-background'
-			loading='lazy')
+			alt='promo-background')

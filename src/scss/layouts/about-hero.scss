@@ -1,7 +1,7 @@
 .about-hero {
 	position: relative;
 	padding: 326rem 0 120rem;
-	overflow: hidden;
+	background-color: $dark;
 
 	@include to(980px) {
 		padding: 280rem 0 80rem;
@@ -17,10 +17,11 @@
 	}
 
 	&__title {
-		font-weight: 700;
-		font-size: 196rem;
+		font-weight: 500;
+		font-size: 186rem;
 		line-height: 1;
 		color: #fff;
+		letter-spacing: 0;
 
 		@include to(1450px) {
 			font-size: 184rem;
@@ -36,6 +37,10 @@
 
 		@include to(580px) {
 			font-size: 13vw;
+		}
+
+		svg {
+			fill: #fff;
 		}
 	}
 
@@ -53,6 +58,7 @@
 	}
 
 	&__text {
+		font-weight: 300;
 		width: 100%;
 		max-width: 500rem;
 		font-size: 17rem;
@@ -68,6 +74,7 @@
 	&__round-arrow {
 		align-self: flex-end;
 		background-color: #fff;
+		stroke-width: 1;
 		stroke: #000;
 		stroke-linecap: inherit;
 		stroke-linejoin: inherit;
@@ -85,8 +92,7 @@
 		width: 3935rem;
 		height: auto;
 		left: 32.6%;
-		bottom: -24rem;
-		opacity: 0.2;
+		bottom: -10rem;
 
 		@include to(1450px) {
 			left: 375rem;
@@ -99,8 +105,23 @@
 
 		@include to(580px) {
 			width: 1936rem;
-			bottom: -16rem;
+			bottom: -5rem;
 			left: 20%;
 		}
+
+		svg {
+			opacity: 0.2;
+		}
+	}
+
+	&__background {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		height: 100%;
+
+		transition: top 0.3s linear;
 	}
 }

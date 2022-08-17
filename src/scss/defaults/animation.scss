@@ -87,3 +87,8 @@
 		opacity: 1;
 	}
 }
+
+.js-custom-reveal-item {
+	transform: translate3d(0, 60rem, 0);
+	opacity: 0;
+}

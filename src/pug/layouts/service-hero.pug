@@ -31,13 +31,13 @@
 		},
 	};
 
-+b.SECTION.service-hero
++b.SECTION.service-hero.js-custom-reveal
 	+e.wrap.wrap
 		+e.block
-			+breadcrumbs(serviceHeroData.breadcrumbs).js-reveal-fadeIn
-			+e.H1.title.h1.js-reveal-fadeIn #{ serviceHeroData.title }
-			+e.subtitle.js-reveal-fadeIn #{ serviceHeroData.subtitle }
-			+button(serviceHeroData.button).js-popup-service-trigger.js-reveal-fadeIn
+			+breadcrumbs(serviceHeroData.breadcrumbs)
+			+e.H1.title.h1.js-custom-reveal-item #{ serviceHeroData.title }
+			+e.subtitle.js-custom-reveal-item #{ serviceHeroData.subtitle }
+			+button(serviceHeroData.button).js-popup-service-trigger.js-custom-reveal-item
 				| Заказать услугу
 	+e.PICTURE.background.unreached
 		source(
@@ -45,5 +45,4 @@
 			media='(max-width: 580px)')
 		img.object-fit(
 			src=serviceHeroData.background.default
-			alt='service-hero-photo'
-			loading='lazy')
+			alt='service-hero-photo')

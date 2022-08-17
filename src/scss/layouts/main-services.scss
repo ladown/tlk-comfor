@@ -52,10 +52,16 @@
 	}
 
 	&__subtitle {
+		font-weight: 300;
 		margin-top: 40rem;
 		font-size: 17rem;
 		line-height: 140%;
 		color: rgba(255, 255, 255, 0.65);
+
+		@include from(769px) {
+			width: 100%;
+			max-width: 350rem;
+		}
 
 		@include to(768px) {
 			margin-top: 20rem;

@@ -28,13 +28,13 @@
 
 +b.SECTION.service-info
 	+e.wrap.wrap
-		+e.content.js-reveal-slideUp.js-reveal-viewFactor
+		+e.content
 			each item in serviceInfoData.content
 				if item.isCaption
 					+e.H4 !{ item.text }
 				else
 					+e.P !{ item.text }
-		+e.PICTURE.photo.js-reveal-slideLeft.js-reveal-viewFactor
+		+e.PICTURE.photo
 			source(
 				srcset=serviceInfoData.photo.mobile
 				media='(max-width: 768px)')

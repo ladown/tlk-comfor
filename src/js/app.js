@@ -11,6 +11,7 @@ import ScrollTop from './modules/scroll-top';
 import Popup from './classes/popup';
 import Forms from './classes/forms';
 import Reveal from './modules/reveal';
+import AboutHero from './modules/about-hero';
 
 import Defaults from './classes/defaults';
 
@@ -22,6 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	new Defaults().init();
 	new Forms().init();
 	Reveal();
+	AboutHero.init();
 
 	const selects = document.querySelectorAll('.js-select');
 	if (selects.length) {

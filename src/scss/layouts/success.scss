@@ -3,6 +3,7 @@
 	position: relative;
 	background-color: $dark;
 	z-index: 1;
+	overflow: hidden;
 
 	@include to(980px) {
 		padding: 275rem 0 200rem;
@@ -17,8 +18,9 @@
 	}
 
 	&__subtitle {
+		font-weight: 300;
 		width: 100%;
-		max-width: 546rem;
+		max-width: 520rem;
 		margin: 24rem auto 0;
 		font-size: 17rem;
 		line-height: 1.4;

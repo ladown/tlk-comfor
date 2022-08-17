@@ -243,6 +243,10 @@ svg {
 
 .main-content {
 	flex: 0 0 auto;
+
+	.about-page & {
+		overflow: hidden;
+	}
 }
 
 .is-hidden {

@@ -1,6 +1,7 @@
 -
 	var aboutHeroData = {
-		title: 'ТЛК Комфорт',
+		titleLogo: 'textLogo',
+		titleLogoViewBox: '0 0 1363 186',
 
 		text: 'Мы современная независимая транспортная компания, осуществляющая промышленные грузоперевозки любых габаритов и веса в любую точку Российской Федерации, надежный партнёр и отвественный работодатель.',
 
@@ -10,13 +11,14 @@
 		},
 	};
 
-+b.SECTION.about-hero
++b.SECTION.about-hero.js-custom-reveal.js-about-hero
 	+e.wrap.wrap
-		+e.H1.title.text-center.js-reveal-scale.js-reveal-interval #{ aboutHeroData.title }
+		+e.H1.title.js-custom-reveal-item
+			+icon(aboutHeroData.titleLogo, aboutHeroData.titleLogoViewBox)
 		+e.subtitle.flex._justify
-			+e.text.js-reveal-slideUp.js-reveal-interval #{ aboutHeroData.text }
-			+round-arrow.js-reveal-slideUp.js-reveal-interval
-	+e.PICTURE.background.unreached
+			+e.text.js-custom-reveal-item #{ aboutHeroData.text }
+			+round-arrow.js-custom-reveal-item
+	+e.PICTURE.background.unreached.js-about-hero-photo
 		source(
 			srcset=aboutHeroData.background.mobile
 			media='(max-width: 580px)')
@@ -24,4 +26,4 @@
 			src=aboutHeroData.background.default
 			alt='about-hero-background'
 			loading='lazy')
-	+text-outlined.js-reveal-slideLeft.js-reveal-viewFactor.js-reveal-interval
+	+text-outlined.js-custom-reveal-item

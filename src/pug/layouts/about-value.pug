@@ -27,11 +27,4 @@
 				+e.feature.js-reveal-slideLeft
 					+e.feature-header #{ item.header }
 					+e.feature-subheader #{ item.subheader }
-		+e.PICTURE.photo.js-reveal-fadeIn.js-reveal-viewFactor
-			source(
-				srcset=aboutValueData.background.mobile
-				media='(max-width: 580px)')
-			img.object-fit(
-				src=aboutValueData.background.default
-				alt='about-value-photo'
-				loading='lazy')
+		+e.PICTURE.photo.js-about-hero-append-block

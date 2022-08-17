@@ -2,16 +2,24 @@
 
 import ScrollReveal from 'scrollreveal';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default () => {
 	const Reveal = ScrollReveal({
 		viewOffset: {
 			top: document.querySelector('.js-header').offsetHeight,
 		},
+		duration: 600,
+		delay: 150,
+		interval: 100,
 		viewFactor: 0.5,
-		easing: 'linear',
+		easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
 	});
+
 	const map = document.querySelector('.js-map-reveal');
+
 	if (map) {
 		const labels = document.querySelector('.js-map-reveal .map__labels');
 		const timeline = gsap.timeline({
@@ -40,7 +48,7 @@ export default () => {
 						opacity: 1,
 						stagger: 0.05,
 						duration: 1,
-						ease: 'linear',
+						ease: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
 					},
 					0.1 * i + 0.1,
 				);
@@ -51,7 +59,7 @@ export default () => {
 			timeline.to(mapPhoto, {
 				x: 0,
 				duration: 0.6,
-				ease: 'linear',
+				ease: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
 			});
 		}
 
@@ -68,44 +76,92 @@ export default () => {
 		distance: '50%',
 		origin: 'bottom',
 		opacity: 0,
-		duration: 300,
-		delay: 150,
 	});
 
 	Reveal.reveal('.js-reveal-fadeIn', {
 		opacity: 0,
-		duration: 300,
-		delay: 150,
 	});
 
 	Reveal.reveal('.js-reveal-slideLeft', {
 		distance: '50%',
 		origin: 'rigth',
 		opacity: 0,
-		duration: 300,
-		delay: 150,
 	});
 
 	Reveal.reveal('.js-reveal-slideRight', {
 		distance: '50%',
 		origin: 'left',
 		opacity: 0,
-		duration: 300,
-		delay: 150,
 	});
 
 	Reveal.reveal('.js-reveal-scale', {
 		scale: 0.5,
 		opacity: 0,
-		duration: 600,
-		delay: 150,
 	});
 
 	Reveal.reveal('.js-reveal-interval', {
-		interval: 200,
+		interval: 100,
 	});
 
 	Reveal.reveal('.js-reveal-viewFactor', {
 		viewFactor: 0,
 	});
+
+	const customRevealBlock = document.querySelectorAll('.js-custom-reveal');
+
+	if (customRevealBlock.length) {
+		const headerHeight = document.querySelector('.js-header').offsetHeight;
+
+		customRevealBlock.forEach((block) => {
+			const items = Array.from(block.querySelectorAll('.js-custom-reveal-item'));
+
+			gsap.timeline({
+				scrollTrigger: {
+					trigger: customRevealBlock,
+					start: `top +=${headerHeight}px`,
+					once: true,
+					onEnter: () => {
+						gsap.fromTo(
+							items,
+							{
+								translateX: 0,
+								translateY: 40,
+								translateZ: 1,
+								opacity: 0,
+							},
+							{
+								translateX: 0,
+								translateY: 0,
+								translateZ: 1,
+								opacity: 1,
+								duration: 1,
+								stagger: 0.5,
+								ease: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+							},
+						);
+					},
+					onEnterBack: () => {
+						gsap.fromTo(
+							items.reverse(),
+							{
+								translateX: 0,
+								translateY: 40,
+								translateZ: 1,
+								opacity: 0,
+							},
+							{
+								translateX: 0,
+								translateY: 0,
+								translateZ: 1,
+								opacity: 1,
+								duration: 1,
+								stagger: 0.25,
+								ease: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+							},
+						);
+					},
+				},
+			});
+		});
+	}
 };

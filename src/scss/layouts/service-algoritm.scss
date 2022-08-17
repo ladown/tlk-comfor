@@ -1,4 +1,5 @@
 .service-algoritm {
+	overflow: hidden;
 	margin-top: 80rem;
 
 	@include to(980px) {
@@ -44,6 +45,10 @@
 		&_description {
 			margin-right: 145rem;
 
+			@include from(981px) {
+				padding-left: 60rem;
+			}
+
 			@include to(980px) {
 				width: 380rem;
 			}
@@ -56,15 +61,13 @@
 				margin-bottom: 26rem;
 			}
 		}
-
-		&_items {
-		}
 	}
 
 	&__subtitle {
+		font-weight: 300;
 		margin-top: 40rem;
 		width: 100%;
-		max-width: 280rem;
+		max-width: 260rem;
 		font-size: 17rem;
 		line-height: 1.4;
 
@@ -133,6 +136,10 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+
+		@include from(981px) {
+			left: var(--wrapper-offset);
+		}
 
 		@include from(1441px) {
 			width: 1685rem;
