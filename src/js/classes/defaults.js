@@ -53,10 +53,31 @@ class Defaults {
 		}
 	}
 
+	changeDirections() {
+		const button = document.querySelectorAll('.js-change-direction');
+
+		button.forEach((el) => {
+			const parentElement = el.parentElement;
+			const directionFrom = parentElement.querySelector('[name="destination_from"]');
+			const directionTo = parentElement.querySelector('[name="destination_to"]');
+
+			el.addEventListener('click', () => {
+				const directionFromValue = directionFrom.value;
+				const directionToValue = directionTo.value;
+
+				directionFrom.value = directionToValue;
+				directionFrom.setAttribute('value', directionToValue);
+				directionTo.value = directionFromValue;
+				directionTo.setAttribute('value', directionFromValue);
+			});
+		});
+	}
+
 	init() {
 		this.changingButton();
 		this.setServiceAlgoritmProgress();
 		this.setListenerBackButton();
+		this.changeDirections();
 	}
 }
 

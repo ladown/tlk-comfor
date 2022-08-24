@@ -2,21 +2,26 @@
 
 const Locker = {
 	node: document.getElementsByTagName('html')[0],
+	header: document.querySelector('.js-header'),
 
 	mod: 'js-lock',
 
 	lock() {
 		this.node.classList.add(this.mod);
 
-		const paddingRight =
+		const offset =
 			parseInt(window.getComputedStyle(this.node, null).getPropertyValue('padding-right'), 10) +
 			this.getScrollbarWidth() * 1;
-		this.node.style.paddingRight = `${paddingRight}px`;
+		[this.node, this.header].forEach((block) => {
+			block.style.marginRight = `${offset}px`;
+		});
 	},
 
 	unlock() {
 		this.node.classList.remove(this.mod);
-		this.node.style.paddingRight = '';
+		[this.node, this.header].forEach((block) => {
+			block.style.marginRight = '';
+		});
 	},
 
 	getScrollbarWidth() {

@@ -29,7 +29,7 @@
 		box-shadow: 0px 4px 56px rgba(0, 30, 66, 0.08);
 		border-radius: 12px;
 		overflow: hidden auto;
-		transform: scale(0);
+		transform: translateY(-100%);
 
 		@include to(580px) {
 			padding: 24rem 24rem 27rem;
@@ -159,6 +159,8 @@
 	}
 
 	&__select {
+		z-index: 5;
+
 		.select {
 			&__options-outer {
 				max-height: 270rem;

@@ -97,6 +97,7 @@
 		top: 20rem;
 		right: 0;
 		width: calc(div(928, 1920) * 100%);
+		max-width: 928rem;
 
 		@include to(768px) {
 			top: 150rem;

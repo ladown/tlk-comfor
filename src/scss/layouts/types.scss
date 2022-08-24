@@ -177,12 +177,12 @@
 
 				.is-out & {
 					visibility: hidden;
-					animation: FadeOutSlideDown 0.3s linear forwards;
+					animation: FadeOutSlideDown 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 				}
 
 				.is-in & {
 					visibility: hidden;
-					animation: FadeInSlideUp 0.3s linear forwards;
+					animation: FadeInSlideUp 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 				}
 
 				img {
@@ -202,24 +202,19 @@
 				width: calc(div(358, 384) * 100%);
 			}
 
-			.is-out.is-left-animation & {
+			.is-out & {
 				visibility: hidden;
-				animation: FadeOutSlideRight 0.3s linear forwards;
-			}
-
-			.is-out.is-right-animation & {
-				visibility: hidden;
-				animation: FadeOutSlideLeft 0.3s linear forwards;
+				animation: FadeOutSlideLeft 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 			}
 
 			.is-in.is-left-animation & {
 				visibility: hidden;
-				animation: FadeInSlideLeft 0.3s linear forwards;
+				animation: FadeInSlideLeft 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 			}
 
 			.is-in.is-right-animation & {
 				visibility: hidden;
-				animation: FadeInSlideRight 0.3s linear forwards;
+				animation: FadeInSlideRight 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 			}
 		}
 	}

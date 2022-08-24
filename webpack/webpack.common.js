@@ -13,9 +13,7 @@ fs.writeFileSync(`${paths.src.pugPages}/index.pug`, generateTemplaet(), { encodi
 module.exports = {
 	target: 'web',
 
-	entry: {
-		main: ['@babel/polyfill', `${paths.src.scripts}/app.js`],
-	},
+	entry: `${paths.src.scripts}/app.js`,
 
 	output: {
 		path: paths.build.default,

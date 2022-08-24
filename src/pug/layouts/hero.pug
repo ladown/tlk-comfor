@@ -6,38 +6,18 @@
 
 		fields: [
 			{
+				type: 'text',
+				customAutocomplete: true,
 				label: 'Откуда',
 				placeholder: 'Комсомольск-на-Амуре',
-				inputName: 'destination_from',
-				options: [
-					'Москва',
-					'Санкт-Петербург',
-					'Новосибирск',
-					'Екатеринбург',
-					'Нижний Новгород',
-					'Ростов-на-Дону',
-					'Волгоград',
-					'Комсомольск-на-Амуре',
-					'Москва',
-					'Новосибирск',
-				],
+				name: 'destination_from',
 			},
 			{
+				type: 'text',
+				customAutocomplete: true,
 				label: 'Куда',
 				placeholder: 'Комсомольск-на-Амуре',
-				inputName: 'destination_to',
-				options: [
-					'Москва',
-					'Санкт-Петербург',
-					'Новосибирск',
-					'Екатеринбург',
-					'Нижний Новгород',
-					'Ростов-на-Дону',
-					'Волгоград',
-					'Комсомольск-на-Амуре',
-					'Москва',
-					'Новосибирск',
-				],
+				name: 'destination_to',
 			},
 		],
 
@@ -57,11 +37,11 @@
 			+e.label-text #{ heroData.label }
 		+e.H1.title.h1.js-custom-reveal-item #{ heroData.title }
 		+e.box.flex._vertical.js-reveal-fadeIn
-			+select(heroData.fields[0])
-			+e.box-icon
+			+field(heroData.fields[0])
+			+e.BUTTON.box-icon.js-change-direction
 				+icon('directionToggle', '0 0 24 36').small-tablet-hidden
 				+icon('directionToggleMobile', '0 0 36 24').min-small-tablet-hidden
-			+select(heroData.fields[1])
+			+field(heroData.fields[1])
 			+button.js-popup-service-trigger
 				| Рассчитать стоимость
 		+e.text.js-reveal-fadeIn #{ heroData.text }

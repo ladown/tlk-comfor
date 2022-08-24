@@ -29,16 +29,16 @@
 	+e.wrap.wrap.flex._column
 		+e.description
 			+e.header.flex._vertical
-				+slider-buttons({mode: ['_light']}).js-reveal-slideRight
-				+e.H2.title.h2.js-reveal-slideLeft #{ aboutInfoData.title }
-			+e.text-slider.swiper.js-slider-about-info-text.js-reveal-fadeIn
+				+slider-buttons({mode: ['_light']})
+				+e.H2.title.h2 #{ aboutInfoData.title }
+			+e.text-slider.swiper.js-slider-about-info-text
 				.swiper-wrapper
 					each slide in aboutInfoData.items
 						+e.text-slide.swiper-slide 
 							+e.text #{ slide.text }
 			+circle-progress
 				| 1 / 4
-		+e.photo-slider.swiper.js-slider-about-info-photo.js-reveal-slideLeft.js-reveal-viewFactord
+		+e.photo-slider.swiper.js-slider-about-info-photo
 			.swiper-wrapper
 				each item in aboutInfoData.photo
 					+e.photo-slide.swiper-slide

@@ -12,6 +12,7 @@ import Popup from './classes/popup';
 import Forms from './classes/forms';
 import Reveal from './modules/reveal';
 import AboutHero from './modules/about-hero';
+import Autocomplete from './classes/autocomplete';
 
 import Defaults from './classes/defaults';
 
@@ -51,5 +52,12 @@ window.addEventListener('DOMContentLoaded', () => {
 	const servicePopup = document.querySelector('.js-popup-service');
 	if (servicePopup) {
 		new Popup(servicePopup, '.js-popup-service-trigger').init();
+	}
+
+	const autocompleteBlocks = document.querySelectorAll('.js-autocomplete-field');
+	if (autocompleteBlocks.length) {
+		autocompleteBlocks.forEach((block) => {
+			new Autocomplete(block).init();
+		});
 	}
 });

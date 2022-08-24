@@ -5,44 +5,20 @@
 		fields: [
 			[
 				{
-					isSelect: true,
-					mods: ['transparent'],
-					isLabel: true,
+					mode: '_transparent',
+					type: 'text',
+					customAutocomplete: true,
 					label: 'Откуда',
 					placeholder: 'Комсомольск-на-Амуре',
-					inputName: 'destination_from',
-					options: [
-						'Москва',
-						'Санкт-Петербург',
-						'Новосибирск',
-						'Екатеринбург',
-						'Нижний Новгород',
-						'Ростов-на-Дону',
-						'Волгоград',
-						'Комсомольск-на-Амуре',
-						'Москва',
-						'Новосибирск',
-					],
+					name: 'destination_from',
 				},
 				{
-					isSelect: true,
-					mods: ['transparent'],
-					isLabel: true,
+					mode: '_transparent',
+					type: 'text',
+					customAutocomplete: true,
 					label: 'Куда',
 					placeholder: 'Комсомольск-на-Амуре',
-					inputName: 'destination_to',
-					options: [
-						'Москва',
-						'Санкт-Петербург',
-						'Новосибирск',
-						'Екатеринбург',
-						'Нижний Новгород',
-						'Ростов-на-Дону',
-						'Волгоград',
-						'Комсомольск-на-Амуре',
-						'Москва',
-						'Новосибирск',
-					],
+					name: 'destination_to',
 				},
 			],
 			[
@@ -79,10 +55,10 @@
 				each row in serviceCalculationData.fields
 					+e.fields-row.flex._vertical.js-reveal-slideUp
 						each item, index in row
-							if item.isSelect
-								+select(item)
+							if item.customAutocomplete
+								+field(item)
 								if index === 0
-									+e.fields-icon
+									+e.BUTTON.fields-icon.js-change-direction
 										+icon('directionToggle', '0 0 24 36').small-tablet-hidden
 										+icon('directionToggleMobile', '0 0 36 24').min-small-tablet-hidden
 							else if item.isButton

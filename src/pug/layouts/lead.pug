@@ -18,11 +18,11 @@
 	+e.background._desktop.mobile-hidden.flex._justify.unreached
 		each item, index in leadData.backgroundDesktop
 			+e.IMG.background-photo(
-				class=`_${index + 1} ${index === 0 ? 'js-reveal-slideRight' : 'js-reveal-slideLeft'}`
+				class=`_${index + 1}`
 				src=item
 				alt='background-photo'
 				loading='lazy')
-	+e.IMG.background._mobile.from-mobile-hidden.unreached.js-reveal-slideUp.js-reveal-viewFactor(
+	+e.IMG.background._mobile.from-mobile-hidden.unreached(
 		src=leadData.backgroundMobile
 		alt='background-photo'
 		loading='lazy')

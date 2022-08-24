@@ -8,7 +8,7 @@ class Popup {
 		this.popup = popupElement;
 		this.popupWrap = this.popup.querySelector('.popup__wrap');
 		this.triggers = document.querySelectorAll(triggerSelector);
-		this.closeButotn = this.popup.querySelector('.js-popup-close');
+		this.inputs = this.popup.querySelectorAll('input');
 		this.isOpened = false;
 	}
 
@@ -22,7 +22,7 @@ class Popup {
 			ease: 'linear',
 			onStart: () => {
 				gsap.to(this.popupWrap, {
-					scale: 1,
+					translateY: 0,
 					duration: 0.3,
 					ease: 'linear',
 				});
@@ -34,7 +34,7 @@ class Popup {
 
 	closePopup() {
 		gsap.to(this.popupWrap, {
-			scale: 0,
+			translateY: '-100%',
 			duration: 0.3,
 			ease: 'linear',
 			onStart: () => {
@@ -74,6 +74,12 @@ class Popup {
 				event.target &&
 				(event.target.classList.contains('js-popup-overlay') || event.target.classList.contains('js-popup-close'))
 			) {
+				this.closePopup();
+			}
+		});
+
+		document.addEventListener('keydown', ({ key, code }) => {
+			if (key === 'Escape' && code === 'Escape') {
 				this.closePopup();
 			}
 		});

@@ -3,5 +3,8 @@ extends ../layouts/layout.pug
 block append vars
 	- title = 'Статья';
 
+block header
+	+header({ mods: ['light'], })
+
 block content
 	include ../layouts/article

@@ -30,17 +30,24 @@ class Tabs {
 			this.tabsContent[this.activeTab].classList.add(this.mods.out);
 			setTimeout(() => {
 				this.tabsContent[this.activeTab].classList.remove(this.mods.out, this.mods.active);
+
+				if (index > this.activeTab) {
+					this.tabsContent[index].classList.add(this.mods.rightAnimation);
+				} else if (index < this.activeTab) {
+					this.tabsContent[index].classList.add(this.mods.leftAnimation);
+				}
+
 				this.tabsContent[index].classList.add(this.mods.active, this.mods.in);
 
 				setTimeout(() => {
-					this.tabsContent[index].classList.remove(this.mods.in);
+					this.tabsContent[index].classList.remove(this.mods.in, this.mods.leftAnimation, this.mods.rightAnimation);
 
 					this.tabs[index].classList.add(this.mods.active);
 					this.tabsParent.classList.remove(this.mods.locked);
 
 					this.activeTab = index;
-				}, 300);
-			}, 300);
+				}, 400);
+			}, 400);
 		} else {
 			this.tabsParent.classList.add(this.mods.locked);
 			this.tabs[this.activeTab].classList.remove(this.mods.active);
@@ -68,22 +75,8 @@ class Tabs {
 		});
 	}
 
-	setAnimationDirection() {
-		this.tabsContent.forEach((item, index) => {
-			if (this.halfItemsCounter <= index) {
-				item.classList.add(this.mods.rightAnimation);
-			} else {
-				item.classList.add(this.mods.leftAnimation);
-			}
-		});
-	}
-
 	init() {
 		this.setListener();
-
-		if (this.isOwnAnimation) {
-			this.setAnimationDirection();
-		}
 	}
 }
 

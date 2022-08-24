@@ -3,6 +3,8 @@
 import { gsap } from 'gsap';
 
 const HeaderSubblock = {
+	isHoverSet: false,
+	isClickSet: false,
 	isOpened: false,
 
 	nodes: {
@@ -12,24 +14,32 @@ const HeaderSubblock = {
 
 	modes: {
 		open: 'is-opened',
+		unreached: 'unreached',
 	},
 
 	closeSubblock() {
-		gsap.to(this.nodes.subblock, {
+		gsap.to(HeaderSubblock.nodes.subblock, {
 			display: 'none',
 			translateY: '40rem',
 			opacity: 0,
 			duration: 0.3,
 			ease: 'linear',
+			onStart: () => {
+				HeaderSubblock.nodes.subblock.classList.add(HeaderSubblock.modes.unreached);
+			},
+
+			onComplete: () => {
+				HeaderSubblock.nodes.subblock.classList.remove(HeaderSubblock.modes.unreached);
+			},
 		});
 
-		this.nodes.trigger.classList.remove(this.modes.open);
+		HeaderSubblock.nodes.trigger.classList.remove(HeaderSubblock.modes.open);
 
-		this.isOpened = !this.isOpened;
+		HeaderSubblock.isOpened = !HeaderSubblock.isOpened;
 	},
 
 	openSubblock() {
-		gsap.to(this.nodes.subblock, {
+		gsap.to(HeaderSubblock.nodes.subblock, {
 			display: 'block',
 			translateY: '0',
 			opacity: 1,
@@ -37,37 +47,76 @@ const HeaderSubblock = {
 			ease: 'linear',
 		});
 
-		this.nodes.trigger.classList.add(this.modes.open);
+		HeaderSubblock.nodes.trigger.classList.add(HeaderSubblock.modes.open);
 
-		this.isOpened = !this.isOpened;
+		HeaderSubblock.isOpened = !HeaderSubblock.isOpened;
 	},
 
-	setListener() {
-		this.nodes.trigger.addEventListener('click', (event) => {
-			event.preventDefault();
-			event.stopPropagation();
+	toggleVisibility(event) {
+		event.preventDefault();
+		event.stopPropagation();
 
-			if (this.isOpened) {
-				this.closeSubblock();
-			} else {
-				this.openSubblock();
+		const link = event.currentTarget.querySelector('.header__link');
+		const path = event.composedPath && event.composedPath();
+
+		if (HeaderSubblock.isOpened) {
+			if (path.includes(link)) {
+				HeaderSubblock.closeSubblock();
 			}
-		});
+		} else {
+			HeaderSubblock.openSubblock();
+		}
 	},
 
-	setListenerForDocument() {
-		document.body.addEventListener('click', (event) => {
-			const path = event.composedPath && event.composedPath();
-			if (this.isOpened && !path.includes(this.nodes.subblock)) {
-				this.closeSubblock();
+	setListenerForHover() {
+		this.nodes.trigger.addEventListener('mouseenter', this.openSubblock);
+		this.nodes.trigger.addEventListener('mouseleave', this.closeSubblock);
+
+		this.isHoverSet = true;
+	},
+
+	unsetListenerForHover() {
+		this.nodes.trigger.removeEventListener('mouseenter', this.openSubblock);
+		this.nodes.trigger.removeEventListener('mouseleave', this.closeSubblock);
+
+		this.isHoverSet = false;
+	},
+
+	setListenerForClick() {
+		this.nodes.trigger.addEventListener('click', this.toggleVisibility);
+
+		this.isClickSet = true;
+	},
+
+	unsetListenerForClick() {
+		this.nodes.trigger.removeEventListener('click', this.toggleVisibility);
+
+		this.isClickSet = false;
+	},
+
+	setListenersOnResize() {
+		window.addEventListener('resize', ({ target }) => {
+			if (target && target.innerWidth >= 581 && !this.isHoverSet && this.isClickSet) {
+				this.setListenerForHover();
+				this.unsetListenerForClick();
+			}
+
+			if (target && target.innerWidth <= 580 && this.isHoverSet && !this.isClickSet) {
+				this.setListenerForClick();
+				this.unsetListenerForHover();
 			}
 		});
 	},
 
 	init() {
 		if (this.nodes.subblock && this.nodes.trigger) {
-			this.setListener();
-			this.setListenerForDocument();
+			if (window.innerWidth >= 581) {
+				this.setListenerForHover();
+			} else {
+				this.setListenerForClick();
+			}
+
+			this.setListenersOnResize();
 		}
 	},
 };

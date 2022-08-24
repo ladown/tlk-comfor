@@ -211,20 +211,16 @@ svg {
 
 	/* Track */
 	&::-webkit-scrollbar-track {
+		border-radius: 100px;
 		background: rgba(#cfdbe3, 0.4);
 	}
 
 	/* Handle */
 	&::-webkit-scrollbar-thumb {
+		border-radius: 100px;
 		background: #cfdbe3;
 		transition: background 0.3s linear;
 	}
-
-	/* Handle on hover */
-	// &::-webkit-scrollbar-thumb:hover {
-	// 	background: $orange;
-	// 	transition: background 0.3s linear;
-	// }
 }
 
 .js-tabs {

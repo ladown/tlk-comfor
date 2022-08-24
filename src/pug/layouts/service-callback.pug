@@ -77,14 +77,14 @@
 			+e.fields.flex._row._wrap
 				each item, index in serviceCallbackData.fields
 					if item.isSelect
-						+select(item).js-reveal-slideUp
+						+select(item)
 					else
-						+field(item).js-reveal-slideUp
+						+field(item)
 			+e.form-footer.flex._start._justify
-				+e.policy.js-reveal-fadeIn
+				+e.policy
 					| Нажимая кнопку «Отправить» вы принимаете условия&nbsp;
 					a(href='#') Политики конфиденциальности&nbsp;
 					| и&nbsp;
 					a(href='#') Обработки персональных данных
-				+button(serviceCallbackData.button).js-reveal-fadeIn
+				+button(serviceCallbackData.button)
 					| Заказать

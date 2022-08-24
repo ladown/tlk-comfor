@@ -36,7 +36,7 @@
 			+e.features.flex._start
 				each item in mapData.features
 					+e.feature.js-reveal-slideUp
-						+e.feature-header.h3 #{ item.header }
+						+e.feature-header.h3.js-animated-number #{ item.header }
 						+e.feature-subheader !{ item.subheader }
 			+button(mapData.button).js-reveal-fadeIn
 				| Подробнее

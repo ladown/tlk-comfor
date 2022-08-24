@@ -56,14 +56,14 @@
 						if item.type === 'email' && callbackData.isChangingTelephone
 							+field(item).is-hidden
 						else
-							+field(item).js-reveal-slideUp.js-reveal-interval
+							+field(item)
 						if index === 2 && callbackData.isChangingTelephone
-							+changing-button.js-reveal-slideUp.js-reveal-interval
+							+changing-button
 				+e.form-footer.flex._start._justify
-					+e.policy.js-reveal-fadeIn
+					+e.policy
 						| Нажимая кнопку «Отправить» вы принимаете условия&nbsp;
 						a(href='#') Политики конфиденциальности&nbsp;
 						| и&nbsp;
 						a(href='#') Обработки персональных данных
-					+button(callbackData.button).js-reveal-fadeIn
+					+button(callbackData.button)
 						| Отправить

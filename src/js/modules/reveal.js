@@ -3,6 +3,7 @@
 import ScrollReveal from 'scrollreveal';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import AnimatingNumbers from '../classes/animated-nums';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +22,7 @@ export default () => {
 	const map = document.querySelector('.js-map-reveal');
 
 	if (map) {
+		const numbers = document.querySelectorAll('.js-animated-number');
 		const labels = document.querySelector('.js-map-reveal .map__labels');
 		const timeline = gsap.timeline({
 			paused: true,
@@ -48,7 +50,6 @@ export default () => {
 						opacity: 1,
 						stagger: 0.05,
 						duration: 1,
-						ease: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
 					},
 					0.1 * i + 0.1,
 				);
@@ -65,6 +66,9 @@ export default () => {
 
 		const revealMap = () => {
 			timeline.play();
+			numbers.forEach((num) => {
+				new AnimatingNumbers(num).startAnimation();
+			});
 		};
 
 		Reveal.reveal('.js-map-reveal', {
@@ -126,16 +130,16 @@ export default () => {
 							{
 								translateX: 0,
 								translateY: 40,
-								translateZ: 1,
+								translateZ: 0,
 								opacity: 0,
 							},
 							{
 								translateX: 0,
 								translateY: 0,
-								translateZ: 1,
+								translateZ: 0,
 								opacity: 1,
-								duration: 1,
-								stagger: 0.5,
+								duration: 0.6,
+								stagger: 0.3,
 								ease: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
 							},
 						);
@@ -146,13 +150,13 @@ export default () => {
 							{
 								translateX: 0,
 								translateY: 40,
-								translateZ: 1,
+								translateZ: 0,
 								opacity: 0,
 							},
 							{
 								translateX: 0,
 								translateY: 0,
-								translateZ: 1,
+								translateZ: 0,
 								opacity: 1,
 								duration: 1,
 								stagger: 0.25,

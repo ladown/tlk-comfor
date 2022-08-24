@@ -215,27 +215,9 @@
 		}
 
 		@include from(769px) {
-			&::before {
-				content: '';
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				height: 100%;
-				width: 100vw;
-				transform: translate(-50%, -50%) scale(0);
-				background-color: #f8f9f9;
-				transition: all 0.3s linear;
-				z-index: -1;
-				pointer-events: none;
-			}
-
 			&:hover {
-				&::before {
-					transform: translate(-50%, -50%) scale(1);
-				}
-
 				.round-arrow {
-					transform: scale(1);
+					opacity: 1;
 				}
 			}
 		}
@@ -312,8 +294,8 @@
 			stroke: #fff;
 
 			@include from(769px) {
-				transform: scale(0);
-				transition: all 0.3s linear;
+				opacity: 0;
+				transition: opacity 0.3s linear;
 			}
 
 			@include to(768px) {
@@ -383,14 +365,10 @@
 			color: rgba(20, 45, 59, 0.7);
 
 			@include from(769px) {
-				visibility: hidden;
-				transform: translateY(40rem);
 				opacity: 0;
-				transition: all 0.3s linear;
+				transition: opacity 0.3s linear;
 
 				.news__item:hover & {
-					visibility: visible;
-					transform: translateY(0);
 					opacity: 1;
 				}
 			}

@@ -45,7 +45,7 @@ const AboutHero = {
 				scrollTrigger: {
 					trigger: this.nodes.wrap,
 					endTrigger: this.nodes.appendBlock,
-					start: 'top +=10',
+					start: 'top top',
 					end: `bottom 75%`,
 					scrub: 1,
 				},
@@ -54,8 +54,6 @@ const AboutHero = {
 				width: this.size.width,
 				height: this.size.height,
 				translateY: this.getCoords(this.nodes.appendBlock).top,
-				duration: 0.6,
-				delay: 0.1,
 				ease: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
 			});
 	},

@@ -106,7 +106,7 @@
 		}
 	}
 
-	&__select {
+	&__field {
 		flex: 0 1 447rem;
 
 		@include to(980px) {
@@ -124,6 +124,16 @@
 
 		&:nth-child(3) {
 			z-index: 1;
+		}
+
+		.field {
+			&__item {
+				padding: 20rem;
+
+				@include to(580px) {
+					padding: 16rem 20rem;
+				}
+			}
 		}
 	}
 

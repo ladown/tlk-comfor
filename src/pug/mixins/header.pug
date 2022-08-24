@@ -1,6 +1,7 @@
 -
 	var headerData = {
 		logo: `${imgPath}common/logo.svg`,
+		logoDark: `${imgPath}common/logo_dark.svg`,
 
 		links: [
 			{
@@ -220,27 +221,27 @@
 	};
 
 mixin header(data = {})
-	+b.HEADER.header.js-header
+	+b.HEADER.header(class=`${data.mods ? `_${data.mods.join(' _')}` : ''} js-header`)
 		+e.wrap.wrap
 			+e.row._top.flex._vertical
 				+e.A.logo.flex(href='/')
-					+e.IMG.logo-img(
-						src=headerData.logo
-						alt='tlk-comfort-logo'
-						loading='lazy')
+					if data.mods && data.mods.includes('light')
+						+e.IMG.logo-img(
+							src=headerData.logoDark
+							alt='tlk-comfort-logo')
+					else
+						+e.IMG.logo-img(
+							src=headerData.logo
+							alt='tlk-comfort-logo')
 					+e.logo-text ТЛК КОМФОРТ
 				+e.A.phone(href='tel:+74953766110') +7 495 376 61 10
 				+e.BUTTON.callback.js-popup-callback-trigger Заказать звонок
-				+search
 				+e.BUTTON.menu-button.js-header-button
 					span
 			+e.row._menu.flex.js-header-menu.js-tabs
-				+search
 				each link, linkIndex in headerData.links
-					+e.block
-						+e.A.link.flex._vertical(
-							href=link.href
-							class=`${link.subblock  ? 'js-header-subblock-trigger' : ''} ${activeHeaderLink === linkIndex ? 'is-active' : '' }`)
+					+e.block(class=link.subblock && 'js-header-subblock-trigger')
+						+e.A.link.flex._vertical(href=link.href class=`${activeHeaderLink === linkIndex ? 'is-active' : '' }`)
 							+e.link-text #{ link.text }
 							if link.subblock
 								+e.link-icon

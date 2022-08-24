@@ -11,13 +11,13 @@
 		},
 	};
 
-+b.SECTION.about-hero.js-custom-reveal.js-about-hero
++b.SECTION.about-hero.js-about-hero
 	+e.wrap.wrap
-		+e.H1.title.js-custom-reveal-item
+		+e.H1.title.js-reveal-fadeIn
 			+icon(aboutHeroData.titleLogo, aboutHeroData.titleLogoViewBox)
 		+e.subtitle.flex._justify
-			+e.text.js-custom-reveal-item #{ aboutHeroData.text }
-			+round-arrow.js-custom-reveal-item
+			+e.text.js-reveal-fadeIn #{ aboutHeroData.text }
+			+round-arrow.js-reveal-fadeIn
 	+e.PICTURE.background.unreached.js-about-hero-photo
 		source(
 			srcset=aboutHeroData.background.mobile
@@ -26,4 +26,4 @@
 			src=aboutHeroData.background.default
 			alt='about-hero-background'
 			loading='lazy')
-	+text-outlined.js-custom-reveal-item
+	+text-outlined.js-reveal-fadeIn.js-reveal-viewFactor
