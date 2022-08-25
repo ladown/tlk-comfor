@@ -7,7 +7,6 @@ import Header from './modules/header';
 import HeaderSubblock from './modules/header-subblock';
 import Tabs from './classes/tabs';
 import Sliders from './sliders/sliders';
-import ScrollTop from './modules/scroll-top';
 import Popup from './classes/popup';
 import Forms from './classes/forms';
 import Reveal from './modules/reveal';
@@ -20,7 +19,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	Header.init();
 	HeaderSubblock.init();
 	Sliders();
-	ScrollTop.init();
 	new Defaults().init();
 	new Forms().init();
 	Reveal();

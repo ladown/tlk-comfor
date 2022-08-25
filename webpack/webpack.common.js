@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const paths = require('./paths');
 const pugPages = require('./pugPages')();
@@ -13,11 +12,13 @@ fs.writeFileSync(`${paths.src.pugPages}/index.pug`, generateTemplaet(), { encodi
 module.exports = {
 	target: 'web',
 
-	entry: `${paths.src.scripts}/app.js`,
+	entry: {
+		app: `${paths.src.scripts}/app.js`,
+	},
 
 	output: {
 		path: paths.build.default,
-		filename: './js/[name].js',
+		filename: './js/[name].[contenthash].js',
 		clean: true,
 	},
 
@@ -32,7 +33,7 @@ module.exports = {
 					from: paths.src.imgs,
 					to: paths.build.imgs,
 					globOptions: {
-						ignore: ['backgrounds/*.*', 'favicons/*.*'],
+						ignore: ['backgrounds/*.*'],
 					},
 				},
 				{
@@ -49,32 +50,6 @@ module.exports = {
 				inject: 'body',
 				alwaysWriteToDisk: true,
 			});
-		}),
-
-		new FaviconsWebpackPlugin({
-			logo: `${paths.src.favicon}/favicon.svg`,
-			cache: true,
-			outputPath: paths.build.favicon,
-			prefix: './img/favicons/',
-			inject: true,
-			favicons: {
-				lang: 'en-US',
-				appName: 'my-app',
-				appDescription: 'My awesome App',
-				background: '#ddd',
-				theme_color: '#333',
-				appleStatusBarStyle: 'black-translucent', // Style for Apple status bar: "black-translucent", "default", "black". `string`
-				icons: {
-					android: true,
-					appleIcon: true,
-					appleStartup: false,
-					favicons: true,
-					windows: false,
-					yandex: false,
-					firefox: false,
-					coast: false,
-				},
-			},
 		}),
 	],
 
@@ -131,5 +106,18 @@ module.exports = {
 				},
 			},
 		],
+	},
+
+	optimization: {
+		runtimeChunk: 'single',
+		splitChunks: {
+			cacheGroups: {
+				vendor: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'vendors',
+					chunks: 'all',
+				},
+			},
+		},
 	},
 };

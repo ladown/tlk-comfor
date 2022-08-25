@@ -3,26 +3,26 @@
 import ScrollReveal from 'scrollreveal';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import AnimatingNumbers from '../classes/animated-nums';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default () => {
+	ScrollReveal.debug = true;
 	const Reveal = ScrollReveal({
-		viewOffset: {
-			top: document.querySelector('.js-header').offsetHeight,
-		},
 		duration: 600,
 		delay: 150,
 		interval: 100,
+		debug: true,
 		viewFactor: 0.5,
 		easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+		viewOffset: {
+			top: document.querySelector('.js-header').offsetHeight,
+		},
 	});
 
 	const map = document.querySelector('.js-map-reveal');
 
 	if (map) {
-		const numbers = document.querySelectorAll('.js-animated-number');
 		const labels = document.querySelector('.js-map-reveal .map__labels');
 		const timeline = gsap.timeline({
 			paused: true,
@@ -66,9 +66,6 @@ export default () => {
 
 		const revealMap = () => {
 			timeline.play();
-			numbers.forEach((num) => {
-				new AnimatingNumbers(num).startAnimation();
-			});
 		};
 
 		Reveal.reveal('.js-map-reveal', {
@@ -76,40 +73,54 @@ export default () => {
 		});
 	}
 
-	Reveal.reveal('.js-reveal-slideUp', {
-		distance: '50%',
-		origin: 'bottom',
-		opacity: 0,
-	});
+	if (document.querySelector('.js-reveal-slideUp')) {
+		Reveal.reveal('.js-reveal-slideUp', {
+			distance: '50%',
+			origin: 'bottom',
+			opacity: 0,
+		});
+	}
 
-	Reveal.reveal('.js-reveal-fadeIn', {
-		opacity: 0,
-	});
+	if (document.querySelector('.js-reveal-fadeIn')) {
+		Reveal.reveal('.js-reveal-fadeIn', {
+			opacity: 0,
+		});
+	}
 
-	Reveal.reveal('.js-reveal-slideLeft', {
-		distance: '50%',
-		origin: 'rigth',
-		opacity: 0,
-	});
+	if (document.querySelector('.js-reveal-slideLeft')) {
+		Reveal.reveal('.js-reveal-slideLeft', {
+			distance: '50%',
+			origin: 'rigth',
+			opacity: 0,
+		});
+	}
 
-	Reveal.reveal('.js-reveal-slideRight', {
-		distance: '50%',
-		origin: 'left',
-		opacity: 0,
-	});
+	if (document.querySelector('.js-reveal-slideRight')) {
+		Reveal.reveal('.js-reveal-slideRight', {
+			distance: '50%',
+			origin: 'left',
+			opacity: 0,
+		});
+	}
 
-	Reveal.reveal('.js-reveal-scale', {
-		scale: 0.5,
-		opacity: 0,
-	});
+	if (document.querySelector('.js-reveal-scale')) {
+		Reveal.reveal('.js-reveal-scale', {
+			scale: 0.5,
+			opacity: 0,
+		});
+	}
 
-	Reveal.reveal('.js-reveal-interval', {
-		interval: 100,
-	});
+	if (document.querySelector('.js-reveal-interval')) {
+		Reveal.reveal('.js-reveal-interval', {
+			interval: 100,
+		});
+	}
 
-	Reveal.reveal('.js-reveal-viewFactor', {
-		viewFactor: 0,
-	});
+	if (document.querySelector('.js-reveal-viewFactor')) {
+		Reveal.reveal('.js-reveal-viewFactor', {
+			viewFactor: 0,
+		});
+	}
 
 	const customRevealBlock = document.querySelectorAll('.js-custom-reveal');
 

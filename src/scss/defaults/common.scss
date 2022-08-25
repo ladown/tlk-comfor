@@ -249,16 +249,16 @@ svg {
 	display: none !important;
 }
 
-.unreached {
+.is-unreached {
 	user-select: none;
 	pointer-events: none;
 }
 
-.unselected {
+.is-unselected {
 	user-select: none;
 }
 
-.unpicked {
+.is-unpicked {
 	pointer-events: none;
 }
 

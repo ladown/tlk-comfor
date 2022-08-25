@@ -15,14 +15,14 @@
 		+e.subtitle.js-reveal-slideUp #{ leadData.subtitle }
 		+button.js-popup-service-trigger.js-reveal-slideUp
 			| Рассчитать бесплатно
-	+e.background._desktop.mobile-hidden.flex._justify.unreached
+	+e.background._desktop.mobile-hidden.flex._justify.is-unreached
 		each item, index in leadData.backgroundDesktop
 			+e.IMG.background-photo(
 				class=`_${index + 1}`
 				src=item
 				alt='background-photo'
 				loading='lazy')
-	+e.IMG.background._mobile.from-mobile-hidden.unreached(
+	+e.IMG.background._mobile.from-mobile-hidden.is-unreached(
 		src=leadData.backgroundMobile
 		alt='background-photo'
 		loading='lazy')

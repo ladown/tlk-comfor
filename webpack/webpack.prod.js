@@ -21,7 +21,7 @@ module.exports = merge(commonOptions, {
 
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: ({ chunk }) => `./css/${chunk.name.replace('/js/', '/css/')}.css`,
+			filename: ({ chunk }) => `./css/${chunk.name.replace('/js/', '/css/')}.[contenthash].css`,
 		}),
 
 		new HookPlugin('RunSvgSpriteGenerator', 'node ./webpack/svgSprite.js', 'beforeRun'),

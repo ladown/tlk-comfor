@@ -1,5 +1,8 @@
 'use strict';
 
+import $ from 'jquery';
+import { isTouchDevice } from '../utils';
+
 class Defaults {
 	changingButton() {
 		const buttons = document.querySelectorAll('.js-changing-button');
@@ -73,11 +76,41 @@ class Defaults {
 		});
 	}
 
+	scrollTop() {
+		$('.js-scroll-top').on('click', () => {
+			$('html, body').scrollTop(0);
+		});
+	}
+
+	contactsMapDisable() {
+		const map = document.querySelector('.js-contacts-map');
+
+		if (map) {
+			document.addEventListener('click', (event) => {
+				const path = event.composedPath && event.composedPath();
+
+				if (!isTouchDevice()) {
+					if (event.target && path.includes(map)) {
+						map.querySelector('iframe').classList.remove('is-unreached');
+					} else {
+						map.querySelector('iframe').classList.add('is-unreached');
+					}
+				}
+			});
+
+			if (isTouchDevice()) {
+				map.querySelector('iframe').classList.remove('is-unreached');
+			}
+		}
+	}
+
 	init() {
 		this.changingButton();
 		this.setServiceAlgoritmProgress();
 		this.setListenerBackButton();
 		this.changeDirections();
+		this.scrollTop();
+		this.contactsMapDisable();
 	}
 }
 

@@ -30,6 +30,10 @@ block vars
 			XUACompatible: 'IE=edge',
 			detection: 'telephone=no'
 		};
+	-
+		var icon = {
+			default: `${imgPath}favicons/favicon.svg`,
+		};
 
 include ../mixins/mixins-loader.pug
 
@@ -63,6 +67,11 @@ html(class=html.classList)&attributes(html.attrs)
 				meta(
 					name='format-detection'
 					content=meta.detection)
+
+			if icon
+				link(
+					rel='icon'
+					href=icon.default)
 
 		block head-end
 

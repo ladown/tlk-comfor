@@ -1,5 +1,6 @@
 'use strict';
 
+import Locker from './locker';
 import { gsap } from 'gsap';
 
 const HeaderSubblock = {
@@ -14,7 +15,7 @@ const HeaderSubblock = {
 
 	modes: {
 		open: 'is-opened',
-		unreached: 'unreached',
+		unreached: 'is-unreached',
 	},
 
 	closeSubblock() {
@@ -26,6 +27,7 @@ const HeaderSubblock = {
 			ease: 'linear',
 			onStart: () => {
 				HeaderSubblock.nodes.subblock.classList.add(HeaderSubblock.modes.unreached);
+				Locker.unlock();
 			},
 
 			onComplete: () => {
@@ -45,6 +47,9 @@ const HeaderSubblock = {
 			opacity: 1,
 			duration: 0.3,
 			ease: 'linear',
+			onStart: () => {
+				Locker.lock();
+			},
 		});
 
 		HeaderSubblock.nodes.trigger.classList.add(HeaderSubblock.modes.open);

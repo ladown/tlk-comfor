@@ -92,3 +92,13 @@
 	transform: translate3d(0, 60rem, 0);
 	opacity: 0;
 }
+
+html.sr {
+	.js-reveal-slideUp,
+	.js-reveal-fadeIn,
+	.js-reveal-slideLeft,
+	.js-reveal-slideRight,
+	.js-reveal-scale {
+		visibility: hidden;
+	}
+}

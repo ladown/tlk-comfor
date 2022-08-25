@@ -17,18 +17,38 @@
 
 	&__wrap {
 		position: relative;
+
 		@include to(1440px) {
 			padding: 0;
 		}
 	}
 
-	&__description {
+	&__box {
 		background-color: $orange;
-		padding: 80rem 9% 60rem;
+		padding: 80rem 0 60rem 110rem;
 
 		@include from(769px) {
-			min-height: 516rem;
-			overflow: hidden;
+			min-height: 500rem;
+		}
+
+		@include from(1441px) {
+			&::before {
+				content: '';
+				position: absolute;
+				left: 560rem;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+				background-color: $orange;
+			}
+		}
+
+		@include to(1440px) {
+			padding-left: 80rem;
+		}
+
+		@include to(1120px) {
+			padding-left: 60rem;
 		}
 
 		@include to(980px) {
@@ -36,32 +56,69 @@
 		}
 
 		@include to(768px) {
-			position: relative;
-			order: 2;
+			padding-top: 0;
+			padding-left: 0;
+			padding-right: 0;
 		}
 
 		@include to(580px) {
-			padding: 56rem 15rem 34rem;
+			padding-bottom: 34rem;
+		}
+	}
+
+	&__slider {
+		&.swiper {
+			overflow: visible;
+		}
+	}
+
+	&__slide {
+		@include to(768px) {
+			display: flex;
+			flex-flow: column nowrap;
+		}
+	}
+
+	&__info {
+		@include to(768px) {
+			order: 2;
+			padding: 60rem 30rem 0;
+		}
+
+		@include to(580px) {
+			padding-left: 15rem;
+			padding-right: 15rem;
 		}
 	}
 
 	&__slider-buttons {
-		margin-right: 9%;
+		position: absolute;
+		top: 73rem;
+		left: 150rem;
+		z-index: 10;
+
+		@include to(1440px) {
+			left: 80rem;
+		}
+
+		@include to(1120px) {
+			left: 60rem;
+		}
 
 		@include to(980px) {
-			margin-right: 50rem;
+			left: 30rem;
+			top: 55rem;
 		}
 
 		@include to(768px) {
-			position: absolute;
-			top: -30rem;
-			left: 30rem;
-			z-index: 2;
+			padding: calc(50% - 30rem) 30rem 0;
+			top: 0;
+			left: 0;
 		}
 
 		@include to(580px) {
 			display: flex;
-			left: 15rem;
+			padding: calc((div(272, 414) * 100%) - 30rem) 15rem 0;
 		}
 	}
 
@@ -69,6 +126,21 @@
 		position: relative;
 		color: #fff;
 		z-index: 2;
+		padding-left: 230rem;
+
+		@include from(769px) {
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+		@include to(1440px) {
+			padding-left: 190rem;
+		}
+
+		@include to(768px) {
+			padding-left: 0;
+		}
 
 		@include to(580px) {
 			width: calc(div(320, 384) * 100%);
@@ -94,59 +166,82 @@
 	}
 
 	&__text {
-		font-weight: 300;
 		width: 100%;
 		max-width: 320rem;
 		font-size: 17rem;
 		line-height: 1.4;
 		color: #ffffff;
+		margin-top: 100rem;
+		margin-bottom: 120rem;
 
 		@include to(768px) {
 			max-width: 100%;
+			margin: 30rem 0 0;
 		}
 
 		@include to(580px) {
+			margin-top: 15rem;
 			max-width: calc(div(320, 384) * 100%);
 			font-size: 16rem;
 		}
 	}
 
 	&__circle-progress {
-		margin-top: 60rem;
+		position: absolute;
+		left: 150rem;
+		bottom: 60rem;
+
+		@include to(1440px) {
+			left: 80rem;
+		}
+
+		@include to(1120px) {
+			left: 60rem;
+		}
 
 		@include to(980px) {
-			margin-top: 45rem;
+			left: 30rem;
+			bottom: 47rem;
+		}
+
+		@include to(768px) {
+			position: relative;
+			left: unset;
+			bottom: unset;
+			margin: 50rem 0 0 30rem;
 		}
 
 		@include to(580px) {
-			margin-top: 35rem;
+			margin: 35rem 0 0 15rem;
 		}
 	}
 
-	&__photo-slider {
-		&.swiper {
-			@include from(769px) {
-				position: absolute;
-				left: 39%;
-				width: 858rem;
-				height: 516rem;
-				z-index: 1;
-			}
-
-			@include from(1440px) {
-				right: -235rem;
-				left: auto;
-			}
-
-			@include to(768px) {
-				width: 100%;
-				order: 1;
-			}
+	&__photo {
+		@include from(769px) {
+			position: absolute;
+			transform: translateY(-50%);
+			position: absolute;
+			top: 50%;
+			left: 39%;
+			width: 858rem;
+			height: 516rem;
+			z-index: 1;
 		}
-	}
 
-	&__photo-slide {
+		@include from(981px) {
+			left: auto;
+			right: -350rem;
+		}
+
+		@include from(1440px) {
+			right: -400rem;
+			left: auto;
+		}
+
 		@include to(768px) {
+			order: 1;
+			position: relative;
+
 			&::before {
 				content: '';
 				display: block;

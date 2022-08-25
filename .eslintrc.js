@@ -10,6 +10,6 @@ module.exports = {
 	parserOptions: {
 		parser: '@babel/eslint-parser',
 		sourceType: 'module',
-		ecmaVersion: 2017,
+		ecmaVersion: 2018,
 	},
 };
