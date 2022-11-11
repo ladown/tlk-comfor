@@ -33,54 +33,54 @@
 		nav: [
 			{
 				label: {
-					href: '/services.html',
+					href: './services.html',
 					text: 'Услуги',
 				},
 
 				links: [
 					{
-						href: '/service.html',
+						href: './service.html',
 						text: 'Автоперевозки грузов',
 					},
 					{
-						href: '/service.html',
+						href: './service.html',
 						text: 'Доставка сборных грузов',
 					},
 					{
-						href: '/service.html',
+						href: './service.html',
 						text: 'Авиаперевозка грузов',
 					},
 					{
-						href: '/service.html',
+						href: './service.html',
 						text: 'Контейнерные грузоперевозки',
 					},
 					{
-						href: '/service.html',
+						href: './service.html',
 						text: 'Железнодорожные перевозки',
 					},
 					{
-						href: '/service.html',
+						href: './service.html',
 						text: 'Проектные перевозки',
 					},
 					{
-						href: '/service.html',
+						href: './service.html',
 						text: 'Таможенное оформление',
 					},
 					{
-						href: '/service.html',
+						href: './service.html',
 						text: 'Складские услуги',
 					},
 				],
 			},
 			{
 				label: {
-					href: '/main.html',
+					href: './main.html',
 					text: 'ТЛК «Комфорт»',
 				},
 
 				links: [
 					{
-						href: '/about.html',
+						href: './about.html',
 						text: 'О компании',
 					},
 					{
@@ -92,11 +92,11 @@
 						text: 'Наши кейсы',
 					},
 					{
-						href: '/news.html',
+						href: './news.html',
 						text: 'Новости',
 					},
 					{
-						href: '/contacts.html',
+						href: './contacts.html',
 						text: 'Контакты',
 					},
 				],
@@ -109,7 +109,7 @@ mixin footer(data = {})
 		+e.wrap.wrap
 			+e.row._top.flex
 				+e.cell._info.flex._row._wrap
-					+e.A.logo(href='/') ТЛК КОМФОРТ
+					+e.A.logo(href='./main.html') ТЛК КОМФОРТ
 					+e.A.phone(href=footerData.phone.href) #{ footerData.phone.text }
 					+e.text #{ footerData.text }
 					+e.A.email(href=footerData.email.href) #{ footerData.email.text }

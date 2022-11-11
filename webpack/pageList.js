@@ -21,10 +21,10 @@ const generatingPageList = () => {
 				.split(' ')
 				.map((el) => capitalizeFirstLetter(el))
 				.join(' ');
-			const href = `/${pageName.replace('.pug', '.html')}`;
-			// const hrefForDeploy = `/${pageName.replace('.pug', '.html')}`;
+			// const href = `/${pageName.replace('.pug', '.html')}`;
+			const hrefForDeploy = `https://portfolio.ermilovee.ru/tlk-comfort/${pageName.replace('.pug', '.html')}`;
 
-			list += `<li><a href=${href} target="_blank">${name} Page</a></li>`;
+			list += `<li><a href=${hrefForDeploy} target="_blank">${name} Page</a></li>`;
 		}
 	});
 

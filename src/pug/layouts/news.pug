@@ -2,7 +2,7 @@
 	var newsData = {
 		breadcrumbs: [
 			{
-				href: '/main.html',
+				href: '/.main.html',
 				text: 'Главная',
 			},
 			{
@@ -191,7 +191,7 @@
 				+e.items.js-tabs-content(class=index === 0 && 'is-active')
 					each item, index in content 
 						if index === 0
-							+e.A.header.flex(href='/article.html')
+							+e.A.header.flex(href='./article.html')
 								+e.header-cell._photo
 									+e.header-photo
 										img.object-fit(
@@ -200,7 +200,7 @@
 								+e.header-cell._description.flex._column._justify
 									+e.H2.header-title.h2 #{ newsData.banner.title }
 									+e.header-subtitle #{ newsData.banner.subtitle }
-						+e.A.item.flex._justify(href='/article.html')
+						+e.A.item.flex._justify(href='./article.html')
 							+e.item-cell._preview.flex
 								+e.item-photo
 									img.object-fit(
